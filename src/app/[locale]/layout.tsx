@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: "Cats",
   description: "A social media for cats",
   icons: {
-    icon: "./svg/cat-full-walk.svg",
+    icon: "/svg/cat-full-walk.svg",
   },
 };
 
