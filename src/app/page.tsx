@@ -1,3 +1,7 @@
 export default function Home() {
-  return <h1>Cats app</h1>;
+  return (
+    <main className="dark:bg-slate-700 min-h-screen">
+      <h1>Cats app</h1>;
+    </main>
+  );
 }
