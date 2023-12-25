@@ -12,10 +12,11 @@ export default function ButtonTheme() {
   const icon = theme === "light" ? <IoMoon size={25} /> : <IoSunny size={25} />;
 
   return (
-    <button onClick={toggleTheme}>
-      <span className="flex items-center gap-1" suppressHydrationWarning>
-        {icon}
-      </span>
+    <button
+      className="absolute top-1/4 right-6 hidden md:block"
+      onClick={toggleTheme}
+    >
+      <span suppressHydrationWarning>{icon}</span>
     </button>
   );
 }
