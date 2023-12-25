@@ -20,7 +20,7 @@ export default function Photo() {
           src={catOne}
           alt="a cat image"
           fill
-          className="object-cover rounded animate-fade-in hover:opacity-75 hover:scale-105 border shadow-lg"
+          className="object-cover rounded animate-fade-in hover:opacity-75 hover:scale-105 border dark:border-none shadow-lg"
         />
       </div>
 
@@ -29,7 +29,7 @@ export default function Photo() {
           src={catTwo}
           alt="a cat image"
           fill
-          className="object-cover rounded animate-fade-in hover:opacity-75 hover:scale-105 border shadow-lg"
+          className="object-cover rounded animate-fade-in hover:opacity-75 hover:scale-105 border dark:border-none shadow-lg"
         />
       </div>
 
@@ -38,7 +38,7 @@ export default function Photo() {
           src={catThree}
           alt="a cat image"
           fill
-          className="object-cover rounded animate-fade-in hover:opacity-75 hover:scale-105 border shadow-lg"
+          className="object-cover rounded animate-fade-in hover:opacity-75 hover:scale-105 border dark:border-none shadow-lg"
         />
       </div>
 
@@ -47,7 +47,7 @@ export default function Photo() {
           src={catFour}
           alt="a cat image"
           fill
-          className="object-cover rounded animate-fade-in hover:opacity-75 hover:scale-105 border shadow-lg"
+          className="object-cover rounded animate-fade-in hover:opacity-75 hover:scale-105 border dark:border-none shadow-lg"
         />
       </div>
       <div className="relative w-full min-h-60 ">
@@ -55,7 +55,7 @@ export default function Photo() {
           src={catFive}
           alt="a cat image"
           fill
-          className="object-cover rounded animate-fade-in hover:opacity-75 hover:scale-105 border shadow-lg"
+          className="object-cover rounded animate-fade-in hover:opacity-75 hover:scale-105 border dark:border-none shadow-lg"
         />
       </div>
       <div className="relative w-full min-h-60 ">
@@ -63,7 +63,7 @@ export default function Photo() {
           src={catSix}
           alt="a cat image"
           fill
-          className="object-cover rounded animate-fade-in hover:opacity-75 hover:scale-105 border shadow-lg"
+          className="object-cover rounded animate-fade-in hover:opacity-75 hover:scale-105 border dark:border-none shadow-lg"
         />
       </div>
     </div>
