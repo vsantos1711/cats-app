@@ -1,16 +1,16 @@
 import Image from "next/image";
-import catOne from "../assets/imgs/cat-one.jpg";
-import catTwo from "../assets/imgs/cat-two.jpg";
-import catThree from "../assets/imgs/cat-three.jpg";
-import catFour from "../assets/imgs/cat-four.jpg";
-import catFive from "../assets/imgs/cat-five.jpg";
-import catSix from "../assets/imgs/cat-six.jpg";
-import catSeven from "../assets/imgs/cat-seven.jpg";
-import catEight from "../assets/imgs/cat-eight.jpg";
-import catNine from "../assets/imgs/cat-nine.jpg";
-import catTen from "../assets/imgs/cat-ten.jpg";
-import catEleven from "../assets/imgs/cat-eleven.jpg";
-import catTwelve from "../assets/imgs/cat-twelve.jpg";
+import catOne from "../assets/img/cat-one.jpg";
+import catTwo from "../assets/img/cat-two.jpg";
+import catThree from "../assets/img/cat-three.jpg";
+import catFour from "../assets/img/cat-four.jpg";
+import catFive from "../assets/img/cat-five.jpg";
+import catSix from "../assets/img/cat-six.jpg";
+// import catSeven from "../assets/img/cat-seven.jpg";
+// import catEight from "../assets/img/cat-eight.jpg";
+// import catNine from "../assets/img/cat-nine.jpg";
+// import catTen from "../assets/img/cat-ten.jpg";
+// import catEleven from "../assets/img/cat-eleven.jpg";
+// import catTwelve from "../assets/img/cat-twelve.jpg";
 
 export default function Photo() {
   return (
