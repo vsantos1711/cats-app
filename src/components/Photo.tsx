@@ -5,7 +5,7 @@ import { tv, VariantProps } from "tailwind-variants";
 const photo = tv({
   base: "relative w-full min-h-60",
   variants: {
-    size: {
+    variant: {
       "xg-top-right": "md:row-start-1 md:row-end-3 md:col-start-2 md:col-end-4",
       "xg-top-left": "md:row-start-1 md:row-end-3 md:col-start-1 md:col-end-3",
       "xg-bot-right": "md:row-start-2 md:row-end-4 md:col-start-2 md:col-end-4",
@@ -21,13 +21,13 @@ type Photo = ComponentProps<"img"> &
   };
 
 export default function Photo({
-  size,
+  variant,
   url,
   alt = "a cata image",
   className,
 }: Photo) {
   return (
-    <div className={photo({ size, className })}>
+    <div className={photo({ variant, className })}>
       <Image
         src={url}
         alt={alt}

@@ -19,11 +19,11 @@ export default function Feed() {
         <Photo url={catFive} />
         <Photo url={catTwo} />
         <Photo url={catFour} />
-        <Photo url={catNine} size="xg-bot-right" />
+        <Photo url={catNine} variant="xg-bot-right" />
       </div>
 
       <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
-        <Photo url={catThree} size="xg-top-left" />
+        <Photo url={catThree} variant="xg-top-left" />
         <Photo url={catSeven} />
         <Photo url={catEight} />
         <Photo url={catTen} />
