@@ -32,7 +32,7 @@ export default function Photo({
         src={url}
         alt={alt}
         fill
-        className="object-cover rounded animate-fade-in hover:opacity-75 hover:scale-105  dark:border-none shadow-lg"
+        className="object-cover rounded animate-fade-in hover:opacity-75 hover:scale-[1.02]  dark:border-none shadow-lg"
       />
     </div>
   );
