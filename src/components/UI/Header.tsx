@@ -4,7 +4,7 @@ import ButtonTheme from "./ButtonTheme";
 
 export default function Header() {
   return (
-    <header className="py-2 border flex px-10">
+    <header className="flex py-2 border px-10 dark:border-none dark:bg-gray-800">
       <nav className="container flex justify-between items-center">
         <Link href="/">
           <Logo />
