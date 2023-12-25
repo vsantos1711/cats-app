@@ -1,0 +1,13 @@
+{
+  "notFound": {
+    "title": "404: Page not found",
+    "message": "Oops! It looks like a curious cat passed by and took this page! We're tracking its paw prints. 🐱🐾",
+    "button": "Back to home"
+  },
+  "header": {
+    "text": "Sing in/ Sign up"
+  },
+  "footer": {
+    "text": "Made with 💜 by "
+  }
+}

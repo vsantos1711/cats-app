@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "../styles/globals.css";
+import "@/styles/globals.css";
 import Header from "@/components/UI/Header";
 import Providers from "@/providers/provider";
 import Footer from "@/components/UI/Footer";
@@ -17,11 +17,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  params: { locale },
 }: {
   children: React.ReactNode;
+  params: { locale: string };
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <body className={inter.className}>
         <Providers>
           <Header />

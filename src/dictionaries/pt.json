@@ -1,0 +1,14 @@
+{
+  "notFound": {
+    "title": "404: Página não encontrada",
+    "message": "Ops! Parece que um gato curioso passou por aqui e levou essa página! Estamos rastreando suas pegadas. 🐱🐾",
+    "button": "Voltar para casa"
+  },
+  "header":{
+    "text": "Entrar/ Criar"
+  },
+  "footer": {
+    "text": "Feito com 💜 por "
+  }
+  
+}
