@@ -6,7 +6,7 @@
 
 ## :memo: Description
 
-MeowHub is a straightforward social media platform for cat lovers! Share delightful cat photos, along with names, ages, and more details about your feline friends. Connect with fellow cat enthusiasts and immerse yourself in the world of cats. It's as simple as a purr! 🐱📸 
+MeowHub: You go-to app for cat adoption! Swipe through charming cat profiles, find your purr-fect match, and make a furry friend's dream come true. It's as simple as a purr! 🐱🏡
 
 ## :wrench: Tools
 
@@ -20,7 +20,7 @@ MeowHub is a straightforward social media platform for cat lovers! Share delight
 1. Clone the repository and install dependencies:
 
 ```shell
-git clone https://github.com/vsantos1711/meow-hub.git && cd cat-app && 
+git clone https://github.com/vsantos1711/meow-hub.git && cd meow-hub && 
 pnpm install
 ```
 2. Run the setup script, which takes care of installing dependencies, building packages and setting up the workspace:
