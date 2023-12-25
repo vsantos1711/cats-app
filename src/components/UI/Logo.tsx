@@ -15,7 +15,7 @@ const logo = tv({
   },
 });
 
-export type LogoProps = ComponentProps<"svg"> & VariantProps<typeof logo>;
+type LogoProps = ComponentProps<"svg"> & VariantProps<typeof logo>;
 
 export default function Logo({ size, className }: LogoProps) {
   return (
