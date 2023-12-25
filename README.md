@@ -6,7 +6,7 @@
 
 ## :memo: Description
 
-MeowHub: You go-to app for cat adoption! Swipe through charming cat profiles, find your purr-fect match, and make a furry friend's dream come true. It's as simple as a purr! 🐱🏡
+MeowHub is a straightforward social media platform for cat lovers! Share delightful cat photos, along with names, ages, and more details about your feline friends. Connect with fellow cat enthusiasts and immerse yourself in the world of cats. It's as simple as a purr! 🐱📸 
 
 ## :wrench: Tools
 
