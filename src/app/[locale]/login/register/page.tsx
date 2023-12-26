@@ -3,8 +3,10 @@ import Image from "next/image";
 import registerCat from "@/assets/img/cat-eleven.jpg";
 import Input from "@/components/UI/Input";
 import Button from "@/components/UI/Button";
+import { useTranslations } from "next-intl";
 
 export default function RegisterPage() {
+  const t = useTranslations("RegisterPage");
   return (
     <div className="dark:bg-slate-700 min-h-screen dark:text-slate-100 ">
       <div className="flex w-full">
@@ -18,22 +20,23 @@ export default function RegisterPage() {
         </div>
         <div className="flex flex-col md:w-1/2 w-full p-8 gap-5 justify-center">
           <h1 className="text-5xl font-semibold text-start w-full">
-            Cadastre-se
+            {t("title")}
           </h1>
           <form className="w-full pb-5">
-            <Input label="Usuário" id="text" type="text" />
-            <Input label="Email" id="email" type="email" />
-            <Input label="Senha" id="password" type="password" />
-            <div className="flex justify-between max-w-[450px]">
+            <Input label={t("label-one")} id="text" type="text" />
+            <Input label={t("label-two")} id="email" type="email" />
+            <Input label={t("label-three")} id="password" type="password" />
+            <div className="flex justify-between max-w-[450px] mb-5">
               <Button type="submit" variant="secondary" size="md">
-                Cadastrar
+                {t("button")}
               </Button>
-              <Link href="/login">
-                <Button type="submit" variant="primary" size="md">
-                  Fazer login
-                </Button>
-              </Link>
             </div>
+            <Link
+              href="/login"
+              className="font-normal underline decoration-solid mb-10 max-w-fit text-gray-500 dark:text-gray-200"
+            >
+              {t("link")}
+            </Link>
           </form>
         </div>
       </div>

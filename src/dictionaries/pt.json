@@ -1,13 +1,36 @@
 {
-  "notFound": {
+  "NotFoundPage": {
     "title": "404: Página não encontrada",
     "message": "Ops! Parece que um gato curioso passou por aqui e levou essa página! Estamos rastreando suas pegadas. 🐱🐾",
     "button": "Voltar para casa"
   },
-  "header":{
+  "LoginPage": {
+    "title": "Acessar",
+    "label-one" : "Usuário",
+    "label-two" : "Senha",
+    "button": "Entrar",
+    "link" : "Esqueceu a senha?",
+    "title-two": "Criar conta",
+    "text": "Ainda não possui conta? Cadastre-se no site.",
+    "button-two": "Criar conta"
+  },
+  "RegisterPage": {
+    "title": "Cadastre-se",
+    "label-one": "Usuário",
+    "label-two": "Email",
+    "label-three": "Senha",
+    "button": "Registrar",
+    "link": "Já possui uma conta? Acesse o site."
+  },
+  "RecoveryPage": {
+    "title": "Perdeu a senha?",
+    "label-one": "Email do usuário",
+    "button": "Enviar email"
+  },
+  "Header":{
     "text": "Entrar/ Criar"
   },
-  "footer": {
+  "Footer": {
     "text": "Feito com 💜 por "
   }
   

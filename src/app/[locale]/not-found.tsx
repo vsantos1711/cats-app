@@ -4,7 +4,7 @@ import notFound from "@/assets/svg/not-found.svg";
 import { useTranslations } from "next-intl";
 
 export default function NotFound() {
-  const t = useTranslations("notFound");
+  const t = useTranslations("NotFoundPage");
   return (
     <div className="py-10 min-h-screen dark:bg-slate-700">
       <div className="container flex flex-col items-center gap-4">

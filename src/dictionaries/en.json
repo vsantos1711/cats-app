@@ -1,13 +1,36 @@
 {
-  "notFound": {
+  "NotFoundPage": {
     "title": "404: Page not found",
     "message": "Oops! It looks like a curious cat passed by and took this page! We're tracking its paw prints. 🐱🐾",
     "button": "Back to home"
   },
-  "header": {
+  "LoginPage": {
+    "title": "Login",
+    "label-one": "Username",
+    "label-two": "Password",
+    "button": "Access",
+    "link": "Forgot password?",
+    "title-two": "Create Account",
+    "text": "Don't have an account yet? Register on the website.",
+    "button-two": "Create Account"
+  },
+  "RegisterPage": {
+    "title": "Sign Up",
+    "label-one": "Username",
+    "label-two": "Email",
+    "label-three": "Password",
+    "button": "Register",
+    "link": "Already have an account? Login on the website."
+  },
+  "RecoveryPage": {
+    "title": "Forgot Password?",
+    "label-one": "User Email",
+    "button": "Send Email"
+  },
+  "Header": {
     "text": "Sing in/ Sign up"
   },
-  "footer": {
+  "Footer": {
     "text": "Made with 💜 by "
   }
 }
