@@ -1,6 +1,6 @@
 import { Link } from "@/navigation";
 import Logo from "./Logo";
-import ButtonTheme from "./ButtonTheme";
+import ButtonTheme from "../ButtonTheme";
 import { useTranslations } from "next-intl";
 
 export default function Header() {
