@@ -3,7 +3,7 @@ import { ComponentProps } from "react";
 import { tv, VariantProps } from "tailwind-variants";
 
 const photo = tv({
-  base: "relative w-full min-h-60",
+  base: "relative w-full min-h-40 sm:min-h-60",
   variants: {
     variant: {
       "xg-top-right": "md:row-start-1 md:row-end-3 md:col-start-2 md:col-end-4",
@@ -23,7 +23,7 @@ type Photo = ComponentProps<"img"> &
 export default function Photo({
   variant,
   url,
-  alt = "a cata image",
+  alt = "a cat image",
   className,
 }: Photo) {
   return (
