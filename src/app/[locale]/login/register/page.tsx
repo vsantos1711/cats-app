@@ -12,6 +12,7 @@ export default function RegisterPage() {
       <div className="flex w-full">
         <div className="relative h-screen md:w-1/2">
           <Image
+            placeholder="blur"
             src={registerCat}
             alt="A golden cat"
             fill

@@ -3,7 +3,7 @@ import { ComponentProps } from "react";
 import { tv, VariantProps } from "tailwind-variants";
 
 const photo = tv({
-  base: "relative w-full min-h-40 sm:min-h-60",
+  base: "relative w-full min-h-32 sm:min-h-60",
   variants: {
     variant: {
       "xg-top-right": "md:row-start-1 md:row-end-3 md:col-start-2 md:col-end-4",
@@ -29,6 +29,7 @@ export default function Photo({
   return (
     <div className={photo({ variant, className })}>
       <Image
+        placeholder="blur"
         src={url}
         alt={alt}
         fill
