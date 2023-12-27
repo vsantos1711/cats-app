@@ -12,8 +12,8 @@ import catTen from "../assets/img/cat-ten.jpg";
 
 export default function Feed() {
   return (
-    <main className="container flex flex-col">
-      <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 py-5">
+    <main className="container flex flex-col gap-4 pt-2">
+      <div className="grid md:grid-cols-3 grid-cols-2 gap-4 ">
         <Photo url={catOne} />
         <Photo url={catTwo} />
         <Photo url={catFive} />
@@ -21,13 +21,12 @@ export default function Feed() {
         <Photo url={catFour} />
         <Photo url={catNine} variant="xg-bot-right" />
       </div>
-
-      <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
-        <Photo url={catThree} variant="xg-top-left" />
+      <div className="grid md:grid-cols-3 grid-cols-2 gap-4 ">
         <Photo url={catSeven} />
         <Photo url={catEight} />
         <Photo url={catTen} />
-        <Photo url={catSix} />
+        <Photo url={catTen} />
+        <Photo url={catThree} variant="xg-top-left" />
         <Photo url={catTen} />
       </div>
     </main>
