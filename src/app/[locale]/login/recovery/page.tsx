@@ -7,7 +7,7 @@ import { useTranslations } from "next-intl";
 export default function RecoveryPage() {
   const t = useTranslations("RecoveryPage");
   return (
-    <div className="dark:bg-slate-700 min-h-screen dark:text-slate-100 ">
+    <div className="dark:bg-slate-700 min-h-screen dark:text-slate-100 transition duration-300">
       <div className="flex w-full">
         <div className="relative h-screen md:w-1/2">
           <Image

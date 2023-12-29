@@ -6,8 +6,8 @@ import { useTranslations } from "next-intl";
 export default function Header() {
   const t = useTranslations("Header");
   return (
-    <header className="flex border h-14 bg-gray-100 relative dark:border-none dark:bg-gray-800">
-      <nav className="container flex justify-between items-center text-gray-800 dark:text-gray-200">
+    <header className="flex border h-14 bg-gray-100 relative dark:border-none dark:bg-gray-800 transition duration-300">
+      <nav className="container flex justify-between items-center text-gray-800 dark:text-gray-200 ">
         <Link href="/">
           <Logo size="sm" />
         </Link>
