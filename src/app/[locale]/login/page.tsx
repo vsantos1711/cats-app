@@ -1,9 +1,9 @@
 import { Link } from "@/navigation";
 import Image from "next/image";
 import mainCat from "@/assets/img/main-cat.jpg";
-import Input from "@/components/UI/Input";
 import Button from "@/components/UI/Button";
 import { useTranslations } from "next-intl";
+import SignInForm from "@/components/SignInForm";
 
 export default function LoginPage() {
   const t = useTranslations("LoginPage");
@@ -22,20 +22,20 @@ export default function LoginPage() {
           <h1 className="text-5xl font-semibold text-start w-full">
             {t("title")}
           </h1>
-          <form className="w-full  pb-5">
-            <Input label={t("label-one")} id="text" type="text" />
 
-            <Input label={t("label-two")} id="password" type="password" />
-            <Button type="submit" variant="primary" size="md">
-              {t("button")}
-            </Button>
-          </form>
+          <SignInForm
+            labelOne={t("label-one")}
+            labelTwo={t("label-two")}
+            textButton={t("button")}
+          />
+
           <Link
             href="login/recovery"
             className="font-normal underline decoration-solid mb-10 max-w-fit text-gray-500 dark:text-gray-200"
           >
             {t("link")}
           </Link>
+
           <div className="w-full flex flex-col gap-5">
             <h2 className="text-3xl font-semibold text-start w-full">
               {t("title-two")}
