@@ -19,6 +19,7 @@
     "label-one": "Username",
     "label-two": "Email",
     "label-three": "Password",
+    "label-four": "Confirm Password",
     "button": "Register",
     "link": "Already have an account? Login on the website."
   },
