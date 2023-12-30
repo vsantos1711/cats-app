@@ -21,7 +21,7 @@ export default function Input({
         {label}
       </label>
       <input
-        className="bg-[#E8F0FE] duration-300 rounded p-2 hover:ring-2 ring-[#3d397c] dark:ring-[#4badce] border dark:text-black max-w-[450px]"
+        className="bg-[#dee8fa] duration-300 rounded p-2 hover:ring-2 ring-[#3d397c] dark:ring-[#4badce] border border-indigo-500 dark:text-black max-w-[450px]"
         placeholder={placeholder}
         type={type}
         id={id}
