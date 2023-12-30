@@ -1,5 +1,5 @@
 {
-  "name": "cats-app",
+  "name": "meow-hub",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,14 +9,17 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.3.3",
     "@radix-ui/react-slot": "^1.0.2",
     "next": "14.0.4",
     "next-intl": "^3.4.0",
     "next-themes": "^0.2.1",
     "react": "^18",
     "react-dom": "^18",
+    "react-hook-form": "^7.49.2",
     "react-icons": "^4.12.0",
-    "tailwind-variants": "^0.1.19"
+    "tailwind-variants": "^0.1.19",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@types/node": "^20",
