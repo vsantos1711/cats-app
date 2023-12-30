@@ -3,7 +3,7 @@ import { VariantProps, tv } from "tailwind-variants";
 import { Slot } from "@radix-ui/react-slot";
 
 const button = tv({
-  base: "rounded-md hover:bg-gray-300 font-normal ",
+  base: "rounded-md hover:bg-gray-300 font-normal disabled:opacity-50 disabled:cursor-not-allowed disabled:bg-gray-400",
   variants: {
     variant: {
       primary: "bg-blue-500 hover:bg-blue-600",
@@ -12,7 +12,7 @@ const button = tv({
       icon: "bg-transparent dark:hover:bg-gray-900 w-10 h-10 border",
     },
     size: {
-      xs: "px-1 py-1 w-10 h-10 ",
+      xs: "px-1 py-1 w-10 h-10",
       sm: "px-2 py-1 text-sm w-20",
       md: "px-4 py-2 text-base w-40 ",
     },
