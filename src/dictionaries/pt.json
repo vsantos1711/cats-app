@@ -30,7 +30,7 @@
   "RecoveryPage": {
     "title": "Esqueceu a Senha?",
     "label-one": "E-mail do Usuário",
-    "label-two": "Código de Ativação",
+    "label-two": "Código de confirmação",
     "placeholder-one": "Seu e-mail na plataforma...",
     "placeholder-two": "O código enviado para o seu e-mail",
     "button": "Enviar E-mail",

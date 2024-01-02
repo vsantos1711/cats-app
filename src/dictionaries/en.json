@@ -30,7 +30,7 @@
   "RecoveryPage": {
     "title": "Forgot Password?",
     "label-one": "User Email",
-    "label-two": "Activation code",
+    "label-two": "Confirmation code",
     "placeholder-one": "Your email on the platform...",
     "placeholder-two": "The code sent to your email",
     "button": "Send Email",
