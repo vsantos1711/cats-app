@@ -26,6 +26,10 @@ export default function RegisterPage() {
             labelTwo={t("label-two")}
             labelThree={t("label-three")}
             labelFour={t("label-four")}
+            placeholderOne={t("placeholder-one")}
+            placeholderTwo={t("placeholder-two")}
+            placeholderThree={t("placeholder-three")}
+            placeholderFour={t("placeholder-four")}
             textButton={t("button")}
             textLink={t("link")}
           />

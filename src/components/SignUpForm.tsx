@@ -11,6 +11,10 @@ type SignUpFormProps = {
   labelTwo: string;
   labelThree: string;
   labelFour: string;
+  placeholderOne: string;
+  placeholderTwo: string;
+  placeholderThree: string;
+  placeholderFour: string;
   textButton: string;
   textLink: string;
 };
@@ -20,6 +24,10 @@ export default function SignUpForm({
   labelTwo,
   labelThree,
   labelFour,
+  placeholderOne,
+  placeholderTwo,
+  placeholderThree,
+  placeholderFour,
   textButton,
   textLink,
 }: SignUpFormProps) {
@@ -49,7 +57,7 @@ export default function SignUpForm({
         label={labelOne}
         id="text"
         type="text"
-        placeholder="Type a nice username..."
+        placeholder={placeholderOne}
         register={register("username")}
       />
       {errors.username && (
@@ -60,7 +68,7 @@ export default function SignUpForm({
         label={labelTwo}
         id="email"
         type="email"
-        placeholder="Your best email"
+        placeholder={placeholderTwo}
         register={register("email")}
       />
       {errors.email && (
@@ -71,7 +79,7 @@ export default function SignUpForm({
         label={labelThree}
         id="password"
         type="password"
-        placeholder="Type a strong password"
+        placeholder={placeholderThree}
         register={register("password")}
       />
       {errors.password && (
@@ -82,7 +90,7 @@ export default function SignUpForm({
         label={labelFour}
         id="confirmPassword"
         type="password"
-        placeholder="Confirm your password..."
+        placeholder={placeholderFour}
         register={register("confirmPassword")}
       />
       {errors.confirmPassword && (

@@ -20,6 +20,10 @@
     "label-two": "Email",
     "label-three": "Senha",
     "label-four": "Confirmar senha",
+    "placeholder-one": "Digite um nome de usuário legal...",
+    "placeholder-two": "Seu melhor e-mail",
+    "placeholder-three": "Digite uma senha forte",
+    "placeholder-four": "Confirme sua senha...",
     "button": "Registrar",
     "link": "Já possui uma conta? Acesse o site."
   },

@@ -20,6 +20,10 @@
     "label-two": "Email",
     "label-three": "Password",
     "label-four": "Confirm Password",
+    "placeholder-one": "Type a nice username...",
+    "placeholder-two": "Your best email",
+    "placeholder-three": "Type a strong password",
+    "placeholder-four": "Confirm your password...",
     "button": "Register",
     "link": "Already have an account? Login on the website."
   },
