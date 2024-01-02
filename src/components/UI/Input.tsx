@@ -5,7 +5,7 @@ type InputProps = {
   id: string;
   type: string;
   placeholder?: string;
-  register: UseFormRegisterReturn;
+  register?: UseFormRegisterReturn;
 };
 
 export default function Input({
