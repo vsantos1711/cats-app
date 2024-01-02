@@ -20,3 +20,10 @@ export const signInSchema = z.object({
 });
 
 export type TSignInSchema = z.infer<typeof signInSchema>;
+
+export const recoveryAccountSchema = z.object({
+  email: z.string().email(),
+  activationCode: z.string(),
+});
+
+export type TRecoveryAccountSchema = z.infer<typeof recoveryAccountSchema>;
