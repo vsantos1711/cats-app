@@ -28,10 +28,14 @@
     "link": "Já possui uma conta? Acesse o site."
   },
   "RecoveryPage": {
-    "title": "Perdeu a senha?",
-    "label-one": "Email do usuário",
-    "button": "Enviar email"
-  },
+    "title": "Esqueceu a Senha?",
+    "label-one": "E-mail do Usuário",
+    "label-two": "Código de Ativação",
+    "placeholder-one": "Seu e-mail na plataforma...",
+    "placeholder-two": "O código enviado para o seu e-mail",
+    "button": "Enviar E-mail",
+    "button-two": "Recuperar senha"
+    },
   "Header":{
     "text": "Entrar/ Criar"
   },

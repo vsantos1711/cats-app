@@ -30,7 +30,11 @@
   "RecoveryPage": {
     "title": "Forgot Password?",
     "label-one": "User Email",
-    "button": "Send Email"
+    "label-two": "Activation code",
+    "placeholder-one": "Your email on the platform...",
+    "placeholder-two": "The code sent to your email",
+    "button": "Send Email",
+    "button-two": "Recovery password"
   },
   "Header": {
     "text": "Sing in/ Sign up"
