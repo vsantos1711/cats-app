@@ -5,7 +5,17 @@ import Input from "@/components/UI/Input";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 
-export default function SignInForm({ labelOne, labelTwo, textButton }: any) {
+type SignInFormProps = {
+  labelOne: string;
+  labelTwo: string;
+  textButton: string;
+};
+
+export default function SignInForm({
+  labelOne,
+  labelTwo,
+  textButton,
+}: SignInFormProps) {
   const {
     register,
     handleSubmit,
