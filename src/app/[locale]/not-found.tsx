@@ -15,7 +15,7 @@ export default function NotFound() {
         <p className="sm:text-2xl text-lg font-bold text-center max-w-[700px]">
           {t("message")}
         </p>
-        <Link href="/" className="text-2xl">
+        <Link href="/" className="text-2xl underline">
           {t("button")}
         </Link>
       </div>
