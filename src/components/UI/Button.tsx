@@ -15,6 +15,7 @@ const button = tv({
       xs: "px-1 py-1 w-10 h-10",
       sm: "px-2 py-1 text-sm w-20",
       md: "px-4 py-2 text-base w-40 ",
+      lg: "px-4 py-2 text-base w-48 ",
     },
   },
   defaultVariants: {
