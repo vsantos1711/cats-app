@@ -10,7 +10,7 @@ export default function LoginPage() {
   return (
     <div className="dark:bg-slate-700 min-h-screen dark:text-slate-100 transition duration-300">
       <div className="flex w-full">
-        <div className="relative h-[120vh] md:w-1/2 ">
+        <div className="relative h-screen md:w-1/2 ">
           <Image
             src={mainCat}
             alt="A golden cat"
