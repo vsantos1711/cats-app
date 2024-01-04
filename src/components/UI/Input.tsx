@@ -6,6 +6,7 @@ type InputProps = {
   type: string;
   placeholder?: string;
   register?: UseFormRegisterReturn;
+  children?: React.ReactNode;
 };
 
 export default function Input({
@@ -14,6 +15,7 @@ export default function Input({
   type,
   placeholder,
   register,
+  children,
 }: InputProps) {
   return (
     <div className="flex flex-col gap-1 pb-1">
@@ -27,6 +29,7 @@ export default function Input({
         id={id}
         {...register}
       />
+      {children}
     </div>
   );
 }
