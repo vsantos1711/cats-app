@@ -1,13 +1,13 @@
 import { Link } from "@/navigation";
-import Logo from "./Logo";
+import Logo from "./logo";
 import ButtonTheme from "./ButtonTheme";
 import { useTranslations } from "next-intl";
 
 export default function Header() {
   const t = useTranslations("Header");
   return (
-    <header className="flex border h-14 bg-gray-100 relative dark:border-none dark:bg-gray-800 transition duration-300">
-      <nav className="container flex justify-between items-center text-gray-800 dark:text-gray-200 ">
+    <header className="relative flex transition duration-300 bg-gray-100 border h-14 dark:border-none dark:bg-gray-800">
+      <nav className="container flex items-center justify-between text-gray-800 dark:text-gray-200 ">
         <Link href="/">
           <Logo size="sm" />
         </Link>

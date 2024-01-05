@@ -1,5 +1,5 @@
 "use client";
-import Input from "@/components/Input";
+import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/navigation";
 import { useForm } from "react-hook-form";

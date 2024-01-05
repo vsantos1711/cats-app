@@ -8,19 +8,19 @@ import SignInForm from "@/components/SignInForm";
 export default function LoginPage() {
   const t = useTranslations("LoginPage");
   return (
-    <div className="dark:bg-slate-700 min-h-screen dark:text-slate-100 transition duration-300">
+    <div className="min-h-screen transition duration-300 dark:bg-slate-700 dark:text-slate-100">
       <div className="flex w-full">
         <div className="relative h-screen md:w-1/2 ">
           <Image
             src={mainCat}
             alt="A golden cat"
             fill
-            className="object-cover animate-fade-in  dark:border-none shadow-lg"
+            className="object-cover shadow-lg animate-fade-in dark:border-none"
           />
         </div>
 
-        <div className="flex flex-col md:w-1/2  p-8 gap-5 justify-center">
-          <h1 className="text-5xl font-semibold text-start w-full">
+        <div className="flex flex-col justify-center gap-5 p-8 md:w-1/2">
+          <h1 className="w-full text-5xl font-semibold text-start">
             {t("title")}
           </h1>
 
@@ -32,13 +32,13 @@ export default function LoginPage() {
 
           <Link
             href="login/recovery"
-            className="font-normal hover:underline decoration-solid mb-10 max-w-fit text-gray-500 dark:text-gray-200"
+            className="mb-10 font-normal text-gray-500 hover:underline decoration-solid max-w-fit dark:text-gray-200"
           >
             {t("link")}
           </Link>
 
-          <div className="w-full flex flex-col gap-4">
-            <h2 className="text-3xl font-semibold text-start w-full">
+          <div className="flex flex-col w-full gap-4">
+            <h2 className="w-full text-3xl font-semibold text-start">
               {t("title-two")}
             </h2>
             <p className="font-normal">{t("text")}</p>

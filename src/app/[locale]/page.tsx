@@ -1,8 +1,8 @@
-import Feed from "@/components/Feed";
+import Feed from "@/components/feed";
 
 export default function Home() {
   return (
-    <main className="dark:bg-slate-700 min-h-screen py-5 transition duration-300">
+    <main className="min-h-screen py-5 transition duration-300 dark:bg-slate-700">
       <Feed />
     </main>
   );

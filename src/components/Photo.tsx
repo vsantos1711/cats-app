@@ -1,5 +1,6 @@
+"use client";
 import Image, { StaticImageData } from "next/image";
-import { ComponentProps } from "react";
+import { ComponentProps, useState } from "react";
 import { tv, VariantProps } from "tailwind-variants";
 import { FaEye } from "react-icons/fa";
 
@@ -37,10 +38,10 @@ export default function Photo({
           src={url}
           alt={alt}
           fill
-          className="object-cover rounded animate-fade-in dark:border-none shadow-lg "
+          className="object-cover rounded shadow-lg animate-fade-in dark:border-none "
         />
       </div>
-      <div className="absolute inset-0 flex gap-2 items-center justify-center opacity-0 hover:opacity-100  bg-gray-500 bg-opacity-50 text-white">
+      <div className="absolute inset-0 flex items-center justify-center gap-2 text-white bg-gray-500 bg-opacity-50 opacity-0 hover:opacity-100">
         <FaEye size={32} />
         <span>{views}</span>
       </div>
