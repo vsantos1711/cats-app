@@ -1,7 +1,7 @@
 "use client";
 import { TRecoveryAccountSchema, recoveryAccountSchema } from "@/lib/types";
 import { Button } from "@/components/ui/button";
-import Input from "@/components/UI/Input";
+import Input from "@/components/Input";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 
