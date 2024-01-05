@@ -1,6 +1,6 @@
 "use client";
 import { TSignInSchema, signInSchema } from "@/lib/types";
-import Button from "@/components/UI/Button";
+import { Button } from "@/components/ui/button";
 import Input from "@/components/UI/Input";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -34,10 +34,7 @@ export default function SignInForm({
   };
 
   return (
-    <form
-      onSubmit={handleSubmit(onSubmit)}
-      className="w-full flex flex-col gap-2"
-    >
+    <form onSubmit={handleSubmit(onSubmit)} className=" flex flex-col gap-2">
       <Input
         label={labelOne}
         id="text"
@@ -58,7 +55,7 @@ export default function SignInForm({
         <p className="text-red-500">{`${errors.password.message}`}</p>
       )}
 
-      <Button type="submit" variant="primary" size="md" disabled={isSubmitting}>
+      <Button type="submit" variant="primary" disabled={isSubmitting}>
         {textButton}
       </Button>
     </form>

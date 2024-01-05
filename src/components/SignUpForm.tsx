@@ -1,6 +1,6 @@
 "use client";
 import Input from "@/components/UI/Input";
-import Button from "@/components/UI/Button";
+import { Button } from "@/components/ui/button";
 import { Link } from "@/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -98,12 +98,7 @@ export default function SignUpForm({
       )}
 
       <div className="flex justify-between max-w-[450px] mb-5">
-        <Button
-          type="submit"
-          variant="secondary"
-          size="md"
-          disabled={isSubmitting}
-        >
+        <Button type="submit" variant="primary" disabled={isSubmitting}>
           {textButton}
         </Button>
       </div>

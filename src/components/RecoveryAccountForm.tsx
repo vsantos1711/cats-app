@@ -1,6 +1,6 @@
 "use client";
 import { TRecoveryAccountSchema, recoveryAccountSchema } from "@/lib/types";
-import Button from "@/components/UI/Button";
+import { Button } from "@/components/ui/button";
 import Input from "@/components/UI/Input";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -67,12 +67,7 @@ export default function RecoveryAccountForm({
       )}
 
       <div className="flex items-center justify-between max-w-[450px]">
-        <Button
-          type="submit"
-          variant="primary"
-          size="md"
-          disabled={isSubmitting}
-        >
+        <Button type="submit" variant="primary" disabled={isSubmitting}>
           {textButton}
         </Button>
         <Button
