@@ -42,26 +42,14 @@ export default function RecoveryAccountForm({
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="w-full flex flex-col gap-2"
+      className="flex flex-col w-full gap-2"
     >
-      <Input
-        label={labelOne}
-        id="email"
-        type="text"
-        placeholder={placeholderOne}
-        register={register("email")}
-      />
+      <Input id="email" type="text" placeholder={placeholderOne} />
       {errors.email && (
         <p className="text-red-500">{`${errors.email.message}`}</p>
       )}
 
-      <Input
-        label={labelTwo}
-        id="activationCode"
-        type="text"
-        placeholder={placeholderTwo}
-        register={register("activationCode")}
-      />
+      <Input id="activationCode" type="text" placeholder={placeholderTwo} />
       {errors.activationCode && (
         <p className="text-red-500">{`${errors.activationCode.message}`}</p>
       )}

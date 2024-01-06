@@ -51,47 +51,27 @@ export default function SignUpForm({
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="w-full pb-5  flex flex-col gap-2"
+      className="flex flex-col w-full gap-2 pb-5"
     >
-      <Input
-        label={labelOne}
-        id="text"
-        type="text"
-        placeholder={placeholderOne}
-        register={register("username")}
-      />
+      <Input id="text" type="text" placeholder={placeholderOne} />
       {errors.username && (
         <p className="text-red-500">{`${errors.username.message}`}</p>
       )}
 
-      <Input
-        label={labelTwo}
-        id="email"
-        type="email"
-        placeholder={placeholderTwo}
-        register={register("email")}
-      />
+      <Input id="email" type="email" placeholder={placeholderTwo} />
       {errors.email && (
         <p className="text-red-500">{`${errors.email.message}`}</p>
       )}
 
-      <Input
-        label={labelThree}
-        id="password"
-        type="password"
-        placeholder={placeholderThree}
-        register={register("password")}
-      />
+      <Input id="password" type="password" placeholder={placeholderThree} />
       {errors.password && (
         <p className="text-red-500">{`${errors.password.message}`}</p>
       )}
 
       <Input
-        label={labelFour}
         id="confirmPassword"
         type="password"
         placeholder={placeholderFour}
-        register={register("confirmPassword")}
       />
       {errors.confirmPassword && (
         <p className="text-red-500">{`${errors.confirmPassword.message}`}</p>
@@ -104,7 +84,7 @@ export default function SignUpForm({
       </div>
       <Link
         href="/login"
-        className="font-normal underline decoration-solid mb-10 max-w-fit text-gray-500 dark:text-gray-200"
+        className="mb-10 font-normal text-gray-500 underline decoration-solid max-w-fit dark:text-gray-200"
       >
         {textLink}
       </Link>

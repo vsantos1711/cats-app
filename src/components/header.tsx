@@ -1,6 +1,6 @@
 import { Link } from "@/navigation";
 import Logo from "./logo";
-import ButtonTheme from "./ButtonTheme";
+import { ToggleTheme } from "./toggleTheme";
 import { useTranslations } from "next-intl";
 
 export default function Header() {
@@ -15,7 +15,7 @@ export default function Header() {
           {t("text")}
         </Link>
       </nav>
-      <ButtonTheme />
+      <ToggleTheme />
     </header>
   );
 }

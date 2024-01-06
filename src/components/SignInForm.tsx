@@ -40,12 +40,7 @@ export default function SignInForm({
         <p className="text-red-500">{`${errors.username.message}`}</p>
       )}
 
-      <Input
-        label={labelTwo}
-        id="password"
-        type="password"
-        register={register("password")}
-      />
+      <Input id="password" type="password" />
       {errors.password && (
         <p className="text-red-500">{`${errors.password.message}`}</p>
       )}
