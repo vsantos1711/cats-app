@@ -1,5 +1,5 @@
 "use client";
-import { TRecoveryAccountSchema, recoveryAccountSchema } from "@/lib/types";
+import { TRecoverySchema, recoverySchema } from "@/lib/types";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -27,11 +27,11 @@ export default function RecoveryAccountForm({
     handleSubmit,
     reset,
     formState: { errors, isSubmitting },
-  } = useForm<TRecoveryAccountSchema>({
-    resolver: zodResolver(recoveryAccountSchema),
+  } = useForm<TRecoverySchema>({
+    resolver: zodResolver(recoverySchema),
   });
 
-  const onSubmit = async (data: TRecoveryAccountSchema) => {
+  const onSubmit = async (data: TRecoverySchema) => {
     // TODO: submit to server
     // ...
     await new Promise((resolve) => setTimeout(resolve, 1000));

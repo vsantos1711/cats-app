@@ -2,10 +2,13 @@ import { Link } from "@/navigation";
 import Image from "next/image";
 import mainCat from "@/assets/img/main-cat.jpg";
 import { Button } from "@/components/ui/button";
-import { useTranslations } from "next-intl";
 import LoginForm from "@/components/loginForm";
 import pick from "lodash/pick";
-import { NextIntlClientProvider, useMessages } from "next-intl";
+import {
+  NextIntlClientProvider,
+  useMessages,
+  useTranslations,
+} from "next-intl";
 
 export default function LoginPage() {
   const t = useTranslations("LoginPage");

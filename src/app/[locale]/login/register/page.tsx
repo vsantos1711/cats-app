@@ -1,12 +1,19 @@
 import Image from "next/image";
 import registerCat from "@/assets/img/cat-eleven.jpg";
-import SignUpForm from "@/components/SignUpForm";
-import { useTranslations } from "next-intl";
+import RegisterForm from "@/components/registerForm";
+import {
+  NextIntlClientProvider,
+  useTranslations,
+  useMessages,
+} from "next-intl";
+import pick from "lodash/pick";
 
 export default function RegisterPage() {
   const t = useTranslations("RegisterPage");
+  const messages = useMessages();
+
   return (
-    <div className="dark:bg-slate-700 min-h-screen dark:text-slate-100 transition duration-300">
+    <div className="min-h-screen transition duration-300 dark:bg-slate-700 dark:text-slate-100">
       <div className="flex w-full">
         <div className="relative h-screen md:w-1/2">
           <Image
@@ -14,25 +21,16 @@ export default function RegisterPage() {
             src={registerCat}
             alt="A golden cat"
             fill
-            className="object-cover animate-fade-in  dark:border-none shadow-lg"
+            className="object-cover shadow-lg animate-fade-in dark:border-none"
           />
         </div>
-        <div className="flex flex-col md:w-1/2 w-full p-8 gap-5 justify-center">
-          <h1 className="text-5xl font-semibold text-start w-full">
+        <div className="flex flex-col justify-center w-full gap-5 p-8 md:w-1/2">
+          <h1 className="w-full text-5xl font-semibold text-start">
             {t("title")}
           </h1>
-          <SignUpForm
-            labelOne={t("label-one")}
-            labelTwo={t("label-two")}
-            labelThree={t("label-three")}
-            labelFour={t("label-four")}
-            placeholderOne={t("placeholder-one")}
-            placeholderTwo={t("placeholder-two")}
-            placeholderThree={t("placeholder-three")}
-            placeholderFour={t("placeholder-four")}
-            textButton={t("button")}
-            textLink={t("link")}
-          />
+          <NextIntlClientProvider messages={pick(messages, "RegisterPage")}>
+            <RegisterForm />
+          </NextIntlClientProvider>
         </div>
       </div>
     </div>

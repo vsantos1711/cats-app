@@ -1,5 +1,4 @@
 "use client";
-import { TLoginSchema, loginSchema } from "@/lib/types";
 import {
   Form,
   FormControl,
@@ -11,6 +10,7 @@ import {
 import { useTranslations } from "next-intl";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { TLoginSchema, loginSchema } from "@/lib/types";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
