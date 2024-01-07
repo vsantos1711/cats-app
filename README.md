@@ -15,6 +15,7 @@ MeowHub is a straightforward social media platform for cat lovers! Share delight
 [<img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" />](https://tailwindcss.com/)
 [<img src="https://img.shields.io/badge/Vercel-242938?style=for-the-badge&logo=vercel&logoColor=white" />](https://vercel.com/)
 [<img src="https://img.shields.io/badge/Zod-3E67B1?style=for-the-badge&logo=zod" />](https://zod.dev/)
+[<img src="https://img.shields.io/badge/shadcnui-000000?style=for-the-badge&logo=shadcnui" />](https://ui.shadcn.com/)
 
 ## :rocket: Running the project
 
