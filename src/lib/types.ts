@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const signUpSchema = z
+export const registerSchema = z
   .object({
     username: z.string().min(3, "Username must be at least 3 characters"),
     email: z.string().email(),
@@ -12,18 +12,18 @@ export const signUpSchema = z
     path: ["confirmPassword"],
   });
 
-export type TSignUpSchema = z.infer<typeof signUpSchema>;
+export type TRegisterSchema = z.infer<typeof registerSchema>;
 
-export const signInSchema = z.object({
+export const loginSchema = z.object({
   username: z.string(),
   password: z.string(),
 });
 
-export type TSignInSchema = z.infer<typeof signInSchema>;
+export type TLoginSchema = z.infer<typeof loginSchema>;
 
-export const recoveryAccountSchema = z.object({
+export const recoverySchema = z.object({
   email: z.string().email(),
   activationCode: z.string(),
 });
 
-export type TRecoveryAccountSchema = z.infer<typeof recoveryAccountSchema>;
+export type TRecoverySchema = z.infer<typeof recoverySchema>;

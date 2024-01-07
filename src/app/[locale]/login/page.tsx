@@ -3,10 +3,14 @@ import Image from "next/image";
 import mainCat from "@/assets/img/main-cat.jpg";
 import { Button } from "@/components/ui/button";
 import { useTranslations } from "next-intl";
-import SignInForm from "@/components/SignInForm";
+import LoginForm from "@/components/loginForm";
+import pick from "lodash/pick";
+import { NextIntlClientProvider, useMessages } from "next-intl";
 
 export default function LoginPage() {
   const t = useTranslations("LoginPage");
+  const messages = useMessages();
+
   return (
     <div className="min-h-screen transition duration-300 dark:bg-slate-700 dark:text-slate-100">
       <div className="flex w-full">
@@ -24,11 +28,9 @@ export default function LoginPage() {
             {t("title")}
           </h1>
 
-          <SignInForm
-            labelOne={t("label-one")}
-            labelTwo={t("label-two")}
-            textButton={t("button")}
-          />
+          <NextIntlClientProvider messages={pick(messages, "LoginPage")}>
+            <LoginForm />
+          </NextIntlClientProvider>
 
           <Link
             href="login/recovery"
