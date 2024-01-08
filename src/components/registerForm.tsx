@@ -103,7 +103,7 @@ export default function RegisterForm() {
       </form>
       <Link
         href="/login"
-        className="mb-10 font-normal text-gray-500 underline decoration-solid max-w-fit dark:text-gray-200"
+        className="mb-10 font-normal text-gray-500 underline hover:text-gray-700 decoration-solid max-w-fit dark:text-gray-200 dark:hover:text-gray-400 "
       >
         {t("link")}
       </Link>
