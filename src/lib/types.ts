@@ -20,13 +20,13 @@ export const registerSchema = z
 export type TRegisterSchema = z.infer<typeof registerSchema>;
 
 export const loginSchema = z.object({
-  username: z.string().default(""),
-  password: z.string().default(""),
+  username: z.string(),
+  password: z.string(),
 });
 export type TLoginSchema = z.infer<typeof loginSchema>;
 
 export const recoverySchema = z.object({
-  email: z.string().email().default(""),
-  activationCode: z.string().default(""),
+  email: z.string().email(),
+  activationCode: z.string(),
 });
 export type TRecoverySchema = z.infer<typeof recoverySchema>;
