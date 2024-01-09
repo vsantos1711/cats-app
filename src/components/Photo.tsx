@@ -8,10 +8,10 @@ const photo = tv({
   base: "relative w-full min-h-32 sm:min-h-60 hover:scale-[1.02] transition duration-150 ",
   variants: {
     variant: {
-      "xg-top-right": "md:row-start-1 md:row-end-3 md:col-start-2 md:col-end-4",
-      "xg-top-left": "md:row-start-1 md:row-end-3 md:col-start-1 md:col-end-3",
-      "xg-bot-right": "md:row-start-2 md:row-end-4 md:col-start-2 md:col-end-4",
-      "xg-bot-left": "md:row-start-2 md:row-end-4 md:col-start-1 md:col-end-3",
+      "top-right": "md:row-start-1 md:row-end-3 md:col-start-2 md:col-end-4",
+      "top-left": "md:row-start-1 md:row-end-3 md:col-start-1 md:col-end-3",
+      "bot-right": "md:row-start-2 md:row-end-4 md:col-start-2 md:col-end-4",
+      "bot-left": "md:row-start-2 md:row-end-4 md:col-start-1 md:col-end-3",
     },
   },
 });
