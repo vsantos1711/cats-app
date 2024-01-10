@@ -1,3 +1,5 @@
+"use client";
+
 import Photo from "./Photo";
 import catOne from "../assets/img/cat-one.jpg";
 import catTwo from "../assets/img/cat-two.jpg";
@@ -9,6 +11,9 @@ import catSeven from "../assets/img/cat-seven.jpg";
 import catEight from "../assets/img/cat-eight.jpg";
 import catNine from "../assets/img/cat-nine.jpg";
 import catTen from "../assets/img/cat-ten.jpg";
+
+import { useState } from "react";
+import Post from "./ui/post";
 
 export default function Feed() {
   const itemsPageOne = [
@@ -38,59 +43,32 @@ export default function Feed() {
       views: "234234",
     },
   ];
-  const itemsPageTwo = [
-    {
-      url: catSeven,
-      views: "24234",
-      variant: "top-right",
-    },
-    {
-      url: catEight,
-      views: "23465234",
-    },
-    {
-      url: catNine,
-      views: "1463263",
-    },
-    {
-      url: catTen,
-      views: "234234",
-    },
-    {
-      url: catEight,
-      views: "23465234",
-    },
-    {
-      url: catNine,
-      views: "1463263",
-    },
-    {
-      url: catTen,
-      views: "234234",
-    },
-  ];
+
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  const handleImageClick = (url: any) => {
+    setSelectedImage(url);
+  };
+
+  const closeImage = () => {
+    setSelectedImage(null);
+  };
+
   return (
-    <main className="container flex flex-col max-w-screen-xl gap-4 pt-2 ">
+    <main className="container flex flex-col max-w-screen-xl gap-4 pt-2">
       <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
         {itemsPageOne.map((item: any, index) => (
           <Photo
-            key={index}
             url={item.url}
             views={item.views}
             variant={item.variant}
-          />
-        ))}
-      </div>
-      <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
-        {itemsPageTwo.map((item: any, index) => (
-          <Photo
             key={index}
-            url={item.url}
-            views={item.views}
-            variant={item.variant}
+            clickEvent={() => handleImageClick(item.url)}
           />
         ))}
       </div>
+
+      {selectedImage && <Post url={selectedImage} onclick={closeImage} />}
     </main>
   );
 }
