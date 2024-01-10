@@ -18,7 +18,7 @@ import Post from "./ui/post";
 export default function Feed() {
   const itemsPageOne = [
     {
-      url: catOne,
+      url: catSix,
       views: "123123",
       variant: "top-right",
     },
@@ -39,7 +39,7 @@ export default function Feed() {
       views: "4242",
     },
     {
-      url: catSix,
+      url: catOne,
       views: "234234",
     },
   ];
@@ -55,7 +55,7 @@ export default function Feed() {
   };
 
   return (
-    <main className="container flex flex-col max-w-screen-xl gap-4 pt-2">
+    <main className="container flex flex-col gap-4 pt-2">
       <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
         {itemsPageOne.map((item: any, index) => (
           <Photo
