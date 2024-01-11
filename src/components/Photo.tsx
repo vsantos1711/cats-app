@@ -20,7 +20,7 @@ type PhotoProps = ComponentProps<"img"> &
     url: string | StaticImageData;
     alt?: string;
     views?: string | number;
-    clickEvent: (url: any) => void;
+    clickEvent: () => void;
   };
 
 export default function Photo({
