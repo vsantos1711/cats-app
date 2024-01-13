@@ -4,7 +4,7 @@ import { tv, VariantProps } from "tailwind-variants";
 import { FaEye } from "react-icons/fa";
 
 const photo = tv({
-  base: "relative w-full min-h-32 sm:min-h-60 hover:scale-[1.02] transition duration-150 ",
+  base: "relative w-full min-h-52 sm:min-h-60 hover:scale-[1.02] transition duration-150 ",
   variants: {
     variant: {
       "top-right": "md:row-start-1 md:row-end-3 md:col-start-2 md:col-end-4",

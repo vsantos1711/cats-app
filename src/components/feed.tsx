@@ -1,6 +1,6 @@
 "use client";
 
-import Photo from "./Photo";
+import Photo from "./photo";
 import catOne from "../assets/img/cat-one.jpg";
 import catTwo from "../assets/img/cat-two.jpg";
 import catThree from "../assets/img/cat-three.jpg";
@@ -19,27 +19,29 @@ type Comment = {
 };
 
 type CatInfos = {
+  name: string;
   age?: number;
   breed?: string;
   weight?: number;
 };
 
-type Photo = {
+export type PostData = {
   url: string | StaticImageData;
   views: string;
   author?: string;
-  catInfos?: CatInfos;
+  catInfos: CatInfos;
   comments?: Comment[];
   variant?: "top-right" | "top-left" | "bot-right" | "bot-left" | undefined;
 };
 
 export default function Feed() {
-  const itemsPageOne: Photo[] = [
+  const itemsPageOne: PostData[] = [
     {
       url: catSix,
       views: "123123",
       author: "John Doe",
       catInfos: {
+        name: "Mimi",
         age: 1,
         breed: "Persian",
         weight: 5,
@@ -55,9 +57,10 @@ export default function Feed() {
     },
     {
       url: catTwo,
-      views: "1233",
+      views: "0",
       author: "Mary may",
       catInfos: {
+        name: "New Jeans",
         age: 2,
         breed: "Persian",
         weight: 2,
@@ -72,9 +75,10 @@ export default function Feed() {
     },
     {
       url: catThree,
-      views: "1233",
+      views: "7533",
       author: "Mary may",
       catInfos: {
+        name: "Perfect night",
         age: 2,
         breed: "Persian",
         weight: 2,
@@ -89,9 +93,10 @@ export default function Feed() {
     },
     {
       url: catFour,
-      views: "1233",
+      views: "342",
       author: "Mary may",
       catInfos: {
+        name: "Golden",
         age: 2,
         breed: "Persian",
         weight: 2,
@@ -106,9 +111,10 @@ export default function Feed() {
     },
     {
       url: catFive,
-      views: "1233",
+      views: "98787",
       author: "Mary may",
       catInfos: {
+        name: "Balerion",
         age: 2,
         breed: "Persian",
         weight: 2,
@@ -123,9 +129,10 @@ export default function Feed() {
     },
     {
       url: catOne,
-      views: "1233",
+      views: "3456",
       author: "Little Dracula",
       catInfos: {
+        name: "Drogo",
         age: 2,
         weight: 2,
       },
@@ -139,33 +146,31 @@ export default function Feed() {
     },
   ];
 
-  const [selectedImage, setSelectedImage] = useState<string | StaticImageData>(
-    ""
-  );
+  const [selectedPost, setSelectedPost] = useState<PostData | null>(null);
 
-  const handleImageClick = (url: string | StaticImageData) => {
-    setSelectedImage(url);
+  const handleImageClick = (post: PostData) => {
+    setSelectedPost(post);
   };
 
   const closeImage = () => {
-    setSelectedImage("");
+    setSelectedPost(null);
   };
 
   return (
     <main className="container flex flex-col gap-4 pt-2">
-      <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
-        {itemsPageOne.map((photo: Photo, index) => (
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
+        {itemsPageOne.map((post: PostData, index) => (
           <Photo
-            url={photo.url}
-            views={photo.views}
-            variant={photo.variant}
+            url={post.url}
+            views={post.views}
+            variant={post.variant}
             key={index}
-            clickEvent={() => handleImageClick(photo.url)}
+            clickEvent={() => handleImageClick(post)}
           />
         ))}
       </div>
 
-      {selectedImage && <Post url={selectedImage} onclick={closeImage} />}
+      {selectedPost && <Post post={selectedPost} onclick={closeImage} />}
     </main>
   );
 }
