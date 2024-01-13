@@ -10,7 +10,7 @@ import catSix from "../assets/img/cat-six.jpg";
 
 import { StaticImageData } from "next/image";
 import { useState } from "react";
-import Post from "./ui/post";
+import Post from "./post";
 
 type Comment = {
   id: number;
@@ -19,9 +19,9 @@ type Comment = {
 };
 
 type CatInfos = {
-  age: number;
-  breed: string;
-  weight: number;
+  age?: number;
+  breed?: string;
+  weight?: number;
 };
 
 type Photo = {
@@ -38,27 +38,104 @@ export default function Feed() {
     {
       url: catSix,
       views: "123123",
+      author: "John Doe",
+      catInfos: {
+        age: 1,
+        breed: "Persian",
+        weight: 5,
+      },
+      comments: [
+        {
+          id: 1,
+          author: "Jane Doe",
+          text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+        },
+      ],
       variant: "top-right",
     },
     {
       url: catTwo,
-      views: "2387",
+      views: "1233",
+      author: "Mary may",
+      catInfos: {
+        age: 2,
+        breed: "Persian",
+        weight: 2,
+      },
+      comments: [
+        {
+          id: 1,
+          author: "John Doe",
+          text: "It's a nice cat!",
+        },
+      ],
     },
     {
       url: catThree,
-      views: "2387",
+      views: "1233",
+      author: "Mary may",
+      catInfos: {
+        age: 2,
+        breed: "Persian",
+        weight: 2,
+      },
+      comments: [
+        {
+          id: 1,
+          author: "John Doe",
+          text: "It's a nice cat!",
+        },
+      ],
     },
     {
       url: catFour,
-      views: "523523",
+      views: "1233",
+      author: "Mary may",
+      catInfos: {
+        age: 2,
+        breed: "Persian",
+        weight: 2,
+      },
+      comments: [
+        {
+          id: 1,
+          author: "John Doe",
+          text: "It's a nice cat!",
+        },
+      ],
     },
     {
       url: catFive,
-      views: "4242",
+      views: "1233",
+      author: "Mary may",
+      catInfos: {
+        age: 2,
+        breed: "Persian",
+        weight: 2,
+      },
+      comments: [
+        {
+          id: 1,
+          author: "John Doe",
+          text: "It's a nice cat!",
+        },
+      ],
     },
     {
       url: catOne,
-      views: "234234",
+      views: "1233",
+      author: "Little Dracula",
+      catInfos: {
+        age: 2,
+        weight: 2,
+      },
+      comments: [
+        {
+          id: 1,
+          author: "John Doe",
+          text: "It's a nice cat!",
+        },
+      ],
     },
   ];
 
