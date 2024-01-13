@@ -78,7 +78,7 @@ export default function Feed() {
       views: "7533",
       author: "Mary may",
       catInfos: {
-        name: "Perfect night",
+        name: "Night Cat",
         age: 2,
         breed: "Persian",
         weight: 2,
