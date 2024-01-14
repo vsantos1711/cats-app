@@ -8,139 +8,148 @@ import catFour from "../assets/img/cat-four.jpg";
 import catFive from "../assets/img/cat-five.jpg";
 import catSix from "../assets/img/cat-six.jpg";
 
-import { StaticImageData } from "next/image";
 import { useState } from "react";
 import Post from "./post";
-
-type Comment = {
-  id: number;
-  author: string;
-  text: string;
-};
-
-type CatInfos = {
-  name: string;
-  age?: number;
-  breed?: string;
-  weight?: number;
-};
-
-export type PostData = {
-  url: string | StaticImageData;
-  views: string;
-  author?: string;
-  catInfos: CatInfos;
-  comments?: Comment[];
-  variant?: "top-right" | "top-left" | "bot-right" | "bot-left" | undefined;
-};
+import { PostData } from "@/types/post";
 
 export default function Feed() {
   const itemsPageOne: PostData[] = [
     {
       url: catSix,
-      views: "123123",
-      author: "John Doe",
+      views: "250000",
+      author: "Tyrion Lannister",
       catInfos: {
-        name: "Mimi",
+        name: "Viserion",
         age: 1,
-        breed: "Persian",
+        breed: "Dragon Cat",
         weight: 5,
       },
       comments: [
         {
           id: 1,
-          author: "Jane Doe",
-          text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.",
+          author: "Daenerys Targaryen",
+          text: "This cat looks like a dragon!",
+        },
+        {
+          id: 2,
+          author: "Jon Snow",
+          text: "I've never seen a cat like this beyond the Wall.",
+        },
+        {
+          id: 3,
+          author: "Arya Stark",
+          text: "Valar Morghulis, even for cats.",
         },
       ],
       variant: "top-right",
     },
     {
       url: catTwo,
-      views: "0",
-      author: "Mary may",
+      views: "45000",
+      author: "Sansa Stark",
       catInfos: {
-        name: "New Jeans",
-        age: 2,
-        breed: "Persian",
-        weight: 2,
+        name: "Ghost",
+        age: 3,
+        breed: "Direcat",
+        weight: 6,
       },
       comments: [
         {
           id: 1,
-          author: "John Doe",
-          text: "It's a nice cat!",
+          author: "Bran Stark",
+          text: "I can sense Ghost's presence through this image.",
+        },
+        {
+          id: 2,
+          author: "Cersei Lannister",
+          text: "An impressive feline, indeed.",
         },
       ],
     },
     {
       url: catThree,
-      views: "7533",
-      author: "Mary may",
+      views: "18000",
+      author: "Khal Drogo",
       catInfos: {
-        name: "Night Cat",
-        age: 2,
-        breed: "Persian",
-        weight: 2,
+        name: "Khalessi",
+        age: 4,
+        breed: "Dothrakicat",
+        weight: 8,
       },
       comments: [
         {
           id: 1,
-          author: "John Doe",
-          text: "It's a nice cat!",
+          author: "Ser Jorah Mormont",
+          text: "Even the cats in Essos are fierce.",
+        },
+        {
+          id: 2,
+          author: "Missandei",
+          text: "Valar Dohaeris, even for cats.",
         },
       ],
     },
     {
       url: catFour,
-      views: "342",
-      author: "Mary may",
+      views: "5000",
+      author: "Arya Stark",
       catInfos: {
-        name: "Golden",
+        name: "Needle",
         age: 2,
-        breed: "Persian",
-        weight: 2,
+        breed: "Facelesscat",
+        weight: 4,
       },
       comments: [
         {
           id: 1,
-          author: "John Doe",
-          text: "It's a nice cat!",
+          author: "Hound",
+          text: "A cat with no name. I like it.",
         },
       ],
     },
     {
       url: catFive,
-      views: "98787",
-      author: "Mary may",
+      views: "120000",
+      author: "Jaime Lannister",
       catInfos: {
-        name: "Balerion",
-        age: 2,
-        breed: "Persian",
-        weight: 2,
+        name: "Lionheart",
+        age: 5,
+        breed: "Lannistercat",
+        weight: 7,
       },
       comments: [
         {
           id: 1,
-          author: "John Doe",
-          text: "It's a nice cat!",
+          author: "Tyrion Lannister",
+          text: "A cat fit for a Lannister.",
+        },
+        {
+          id: 2,
+          author: "Cersei Lannister",
+          text: "Lionheart indeed.",
         },
       ],
     },
     {
       url: catOne,
-      views: "3456",
-      author: "Little Dracula",
+      views: "8000",
+      author: "Night King",
       catInfos: {
-        name: "Drogo",
-        age: 2,
-        weight: 2,
+        name: "White Walker",
+        age: 3,
+        breed: "Undeadcat",
+        weight: 10,
       },
       comments: [
         {
           id: 1,
-          author: "John Doe",
-          text: "It's a nice cat!",
+          author: "Bran Stark",
+          text: "I sense a mysterious aura around this cat.",
+        },
+        {
+          id: 2,
+          author: "Jon Snow",
+          text: "Is this a cat beyond the Wall?",
         },
       ],
     },
