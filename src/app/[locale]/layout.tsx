@@ -5,7 +5,10 @@ import Header from "@/components/header";
 import Providers from "@/providers/provider";
 import Footer from "@/components/footer";
 
-const poppins = Poppins({ weight: "500", subsets: ["latin-ext"] });
+const poppins = Poppins({
+  weight: ["100", "300", "400", "500", "600", "900"],
+  subsets: ["latin-ext"],
+});
 
 export const metadata: Metadata = {
   title: "Cats",
