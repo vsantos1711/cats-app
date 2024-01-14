@@ -1,8 +1,7 @@
+import { PostData } from "@/types/post";
 import Image, { StaticImageData } from "next/image";
 import { useRef } from "react";
 import { FaEye } from "react-icons/fa";
-import { PostData } from "./feed";
-import { userAgent } from "next/server";
 
 type PostProps = {
   post: PostData;
@@ -32,7 +31,7 @@ export default function Post({ post, onclick }: PostProps) {
         </div>
         <div className="flex flex-col flex-1 gap-2 px-5 py-6">
           <div className="flex justify-between w-full mb-4 text-sm text-gray-400">
-            <p>@{post.author}</p>
+            <p className="underline">@{post.author}</p>
             <p className="flex items-center gap-1 ">
               <FaEye size={15} />
               <span>{post.views}</span>
@@ -41,20 +40,38 @@ export default function Post({ post, onclick }: PostProps) {
           <div className="flex items-end justify-between mb-2 ">
             <h2 className="text-3xl text-decoration">{post.catInfos.name}</h2>
             <div className="flex items-center gap-1 text-end ">
-              <p className="text-sm text-gray-400 ">Breed:</p>
-              <p className="text-sm">{post.catInfos.breed}</p>
+              <p className="text-sm text-gray-400 ">
+                Breed:{" "}
+                <span className="text-black">
+                  {post.catInfos.breed ?? "N/A"}
+                </span>
+              </p>
             </div>
           </div>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 mb-8">
             <div className="flex items-center gap-1 ">
-              <p className="text-sm text-gray-400 ">Years:</p>
-              <p className="text-base">{post.catInfos.age}</p>
+              <p className="text-sm text-gray-400 ">
+                Years: <span className="text-black">{post.catInfos.age}</span>
+              </p>
             </div>
 
             <div className="flex items-center gap-1">
-              <p className="text-sm text-gray-400 ">Weight:</p>
-              <p className="text-base">{post.catInfos.weight}kg</p>
+              <p className="text-sm text-gray-400 ">
+                Weight:{" "}
+                <span className="text-black">{post.catInfos.weight}kg</span>
+              </p>
             </div>
+          </div>
+
+          <div className="flex flex-col gap-2">
+            {post.comments?.map((comment, index) => (
+              <div key={index} className="font-semibold ">
+                <p>
+                  {comment.author}:{" "}
+                  <span className="font-light"> {comment.text}</span>
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
