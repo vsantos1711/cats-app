@@ -40,6 +40,41 @@ export default function Feed() {
           author: "Arya Stark",
           text: "Valar Morghulis, even for cats.",
         },
+        {
+          id: 4,
+          author: "Daenerys Targaryen",
+          text: "This cat looks like a dragon!",
+        },
+        {
+          id: 5,
+          author: "Jon Snow",
+          text: "I've never seen a cat like this beyond the Wall.",
+        },
+        {
+          id: 6,
+          author: "Arya Stark",
+          text: "Valar Morghulis, even for cats.",
+        },
+        {
+          id: 5,
+          author: "Jon Snow",
+          text: "I've never seen a cat like this beyond the Wall.",
+        },
+        {
+          id: 6,
+          author: "Arya Stark",
+          text: "Valar Morghulis, even for cats.",
+        },
+        {
+          id: 7,
+          author: "Jon Snow",
+          text: "I've never seen a cat like this beyond the Wall.",
+        },
+        {
+          id: 8,
+          author: "Arya Stark",
+          text: "Valar Morghulis, even for cats.",
+        },
       ],
       variant: "top-right",
     },
