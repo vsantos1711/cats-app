@@ -30,7 +30,7 @@ export default function Post({ post, onclick }: PostProps) {
       className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-sm bg-white/1"
       onClick={handleClick}
     >
-      <div className="flex flex-col md:flex-row rounded overflow-scroll m-3 w-[900px] h-[600px] bg-[#f0f0f0] dark:bg-slate-600 ">
+      <div className="flex flex-col md:flex-row rounded overflow-scroll md:overflow-hidden m-3 w-[900px] h-[600px] bg-[#f0f0f0] dark:bg-slate-600 ">
         <div className="relative md:w-[62%] md:min-h-full min-h-[65%]">
           <Image alt="cat" src={post.url} fill objectFit="cover" />
         </div>
