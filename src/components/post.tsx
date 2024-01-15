@@ -1,7 +1,11 @@
 import { PostData } from "@/types/post";
 import Image, { StaticImageData } from "next/image";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "./ui/button";
 import { useRef } from "react";
 import { FaEye } from "react-icons/fa";
+import Logo from "./logo";
 
 type PostProps = {
   post: PostData;
@@ -29,7 +33,7 @@ export default function Post({ post, onclick }: PostProps) {
         <div className="relative md:w-[62%] md:min-h-full min-h-[65%]">
           <Image alt="cat" src={post.url} fill objectFit="cover" />
         </div>
-        <div className="flex flex-col flex-1 gap-2 px-5 py-6">
+        <div className="flex flex-col flex-1 gap-2 p-5 ">
           <div className="flex justify-between w-full mb-4 text-sm text-gray-400">
             <p className="underline">@{post.author}</p>
             <p className="flex items-center gap-1 ">
@@ -63,15 +67,26 @@ export default function Post({ post, onclick }: PostProps) {
             </div>
           </div>
 
-          <div className="flex flex-col gap-2">
-            {post.comments?.map((comment, index) => (
-              <div key={index} className="font-semibold ">
-                <p>
-                  {comment.author}:{" "}
-                  <span className="font-light"> {comment.text}</span>
-                </p>
-              </div>
-            ))}
+          <div className="flex flex-col gap-2 ">
+            <ScrollArea className="p-1 border rounded-md h-80">
+              {post.comments?.map((comment, index) => (
+                <div key={index} className="font-semibold ">
+                  <p>
+                    {comment.author}:{" "}
+                    <span className="font-light"> {comment.text}</span>
+                  </p>
+                </div>
+              ))}
+            </ScrollArea>
+          </div>
+          <div className="flex items-center justify-between h-full ">
+            <Textarea
+              className="p-1 bg-gray-200 rounded w-60"
+              placeholder="Add a comment..."
+            />
+            <Button variant="ghost" size="icon">
+              <Logo className="transition hover:text-gray-700" />
+            </Button>
           </div>
         </div>
       </div>
