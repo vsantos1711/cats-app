@@ -30,3 +30,8 @@ export const recoverySchema = z.object({
   activationCode: z.string(),
 });
 export type TRecoverySchema = z.infer<typeof recoverySchema>;
+
+export const commentSchema = z.object({
+  comment: z.string().max(160).default(""),
+});
+export type TCommentSchema = z.infer<typeof commentSchema>;

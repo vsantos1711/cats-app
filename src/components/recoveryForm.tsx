@@ -14,7 +14,6 @@ import { TRecoverySchema, recoverySchema } from "@/lib/types";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { Link } from "@/navigation";
 
 export default function LoginForm() {
   const t = useTranslations("RecoveryPage");

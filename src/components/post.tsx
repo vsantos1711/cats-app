@@ -1,12 +1,10 @@
 import { PostData } from "@/types/post";
 import Image, { StaticImageData } from "next/image";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Textarea } from "@/components/ui/textarea";
-import { Button } from "./ui/button";
 import { useRef } from "react";
 import { FaEye } from "react-icons/fa";
-import Logo from "./logo";
 import Link from "next/link";
+import CommentForm from "./commentForm";
 
 type PostProps = {
   post: PostData;
@@ -88,18 +86,8 @@ export default function Post({ post, onclick }: PostProps) {
               ))}
             </ScrollArea>
           </div>
-          <div className="flex items-center justify-between">
-            <Textarea
-              className="p-1 bg-gray-200 rounded w-60 dark:bg-slate-500 dark:border-gray-500"
-              placeholder="Add a comment..."
-            />
-            <Button
-              variant="ghost"
-              size="icon"
-              className="text-gray-400 transition dark:text-gray-300 hover:bg-transparent hover:text-black dark:hover:text-white dark:hover:bg-transparent"
-            >
-              <Logo />
-            </Button>
+          <div>
+            <CommentForm />
           </div>
         </div>
       </div>
