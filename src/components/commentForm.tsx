@@ -33,7 +33,7 @@ export default function CommentForm() {
               <FormControl>
                 <Textarea
                   placeholder="Add a comment..."
-                  className="p-1 bg-gray-200 rounded w-60 dark:bg-slate-500 dark:border-gray-500"
+                  className="p-1 bg-gray-200 rounded w-60 dark:bg-slate-500 dark:border-gray-500 hover:ring-1 hover:ring-gray-900"
                   {...field}
                 />
               </FormControl>
