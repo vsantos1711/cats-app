@@ -2,16 +2,10 @@ import { z } from "zod";
 
 export const registerSchema = z
   .object({
-    username: z
-      .string()
-      .min(3, "Username must be at least 3 characters")
-      .default(""),
-    email: z.string().email().default(""),
-    password: z
-      .string()
-      .min(6, "Password must be at least 6 characters")
-      .default(""),
-    confirmPassword: z.string().default(""),
+    username: z.string().min(3, "Username must be at least 3 characters"),
+    email: z.string().email(),
+    password: z.string().min(6, "Password must be at least 6 characters"),
+    confirmPassword: z.string(),
   })
   .refine((data) => data.password === data.confirmPassword, {
     message: "Passwords do not match",
@@ -32,6 +26,6 @@ export const recoverySchema = z.object({
 export type TRecoverySchema = z.infer<typeof recoverySchema>;
 
 export const commentSchema = z.object({
-  comment: z.string().max(160).default(""),
+  comment: z.string().max(160),
 });
 export type TCommentSchema = z.infer<typeof commentSchema>;

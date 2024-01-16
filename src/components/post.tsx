@@ -45,6 +45,7 @@ export default function Post({ post, onclick }: PostProps) {
               <span>{post.views}</span>
             </p>
           </div>
+
           <div className="flex items-end justify-between mb-2 ">
             <h2 className="text-3xl text-decoration">{post.catInfos.name}</h2>
             <div className="flex items-center gap-1 text-end ">
@@ -56,6 +57,7 @@ export default function Post({ post, onclick }: PostProps) {
               </p>
             </div>
           </div>
+
           <div className="flex items-center gap-4 ">
             <div className="flex items-center gap-1 ">
               <p className="text-sm text-gray-400 ">
@@ -86,9 +88,7 @@ export default function Post({ post, onclick }: PostProps) {
               ))}
             </ScrollArea>
           </div>
-          <div>
-            <CommentForm />
-          </div>
+          <CommentForm />
         </div>
       </div>
     </div>

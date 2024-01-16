@@ -10,6 +10,9 @@ import { zodResolver } from "@hookform/resolvers/zod";
 export default function CommentForm() {
   const form = useForm<TCommentSchema>({
     resolver: zodResolver(commentSchema),
+    defaultValues: {
+      comment: "",
+    },
   });
 
   const onSubmit = async (data: TCommentSchema) => {

@@ -19,12 +19,18 @@ export default function RegisterForm() {
   const t = useTranslations("RegisterPage");
   const form = useForm<TRegisterSchema>({
     resolver: zodResolver(registerSchema),
+    defaultValues: {
+      username: "",
+      email: "",
+      password: "",
+      confirmPassword: "",
+    },
   });
 
   const onSubmit = async (data: TRegisterSchema) => {
     // TODO: submit to server
     // ...
-    await new Promise((resolve) => setTimeout(resolve, 3000));
+    await new Promise((resolve) => setTimeout(resolve, 1000));
     form.reset();
   };
 

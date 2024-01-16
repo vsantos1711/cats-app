@@ -19,12 +19,16 @@ export default function LoginForm() {
   const t = useTranslations("RecoveryPage");
   const form = useForm<TRecoverySchema>({
     resolver: zodResolver(recoverySchema),
+    defaultValues: {
+      activationCode: "",
+    },
   });
 
   const onSubmit = async (data: TRecoverySchema) => {
     // TODO: submit to server
     // ...
     await new Promise((resolve) => setTimeout(resolve, 3000));
+    form.reset();
   };
 
   return (
