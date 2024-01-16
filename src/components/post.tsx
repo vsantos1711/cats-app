@@ -34,7 +34,7 @@ export default function Post({ post, onclick }: PostProps) {
         <div className="relative md:w-[62%] md:min-h-full min-h-[65%]">
           <Image alt="cat" src={post.url} fill objectFit="cover" />
         </div>
-        <div className="flex flex-col flex-1 gap-2 p-5 ">
+        <div className="flex flex-col justify-around flex-1 h-full p-5">
           <div className="flex justify-between w-full mb-4 text-sm text-gray-400 dark:text-gray-300">
             <Link
               className="underline hover:text-blue-700 dark:hover:text-white"
@@ -58,7 +58,7 @@ export default function Post({ post, onclick }: PostProps) {
               </p>
             </div>
           </div>
-          <div className="flex items-center gap-4 mb-8">
+          <div className="flex items-center gap-4 ">
             <div className="flex items-center gap-1 ">
               <p className="text-sm text-gray-400 ">
                 Years:{" "}
@@ -79,7 +79,7 @@ export default function Post({ post, onclick }: PostProps) {
           </div>
 
           <div className="flex flex-col gap-2 ">
-            <ScrollArea className="p-1 rounded-md h-80">
+            <ScrollArea className="p-1 py-2 rounded-md h-80">
               {post.comments?.map((comment, index) => (
                 <p key={index} className="my-0.5 font-semibold ">
                   {comment.author}:{" "}
@@ -88,7 +88,7 @@ export default function Post({ post, onclick }: PostProps) {
               ))}
             </ScrollArea>
           </div>
-          <div className="flex items-center justify-between h-full ">
+          <div className="flex items-center justify-between">
             <Textarea
               className="p-1 bg-gray-200 rounded w-60 dark:bg-slate-500 dark:border-gray-500"
               placeholder="Add a comment..."
