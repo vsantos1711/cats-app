@@ -79,7 +79,7 @@ export default function Post({ post, onclick }: PostProps) {
           </div>
 
           <div className="flex flex-col gap-2 ">
-            <ScrollArea className="p-1 py-2 rounded-md h-80">
+            <ScrollArea className="p-1 py-5 rounded-md sm:py-2 sm:h-80">
               {post.comments?.map((comment, index) => (
                 <p key={index} className="my-0.5 font-semibold ">
                   {comment.author}:{" "}
