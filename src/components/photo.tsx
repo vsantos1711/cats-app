@@ -22,8 +22,6 @@ const photo = tv({
   },
 });
 
-// ...
-
 export default function Photo({
   variant,
   url,
@@ -37,7 +35,7 @@ export default function Photo({
       <img
         alt={alt}
         src={url}
-        className="object-cover w-full min-h-full max-h-52 sm:max-h-60"
+        className="object-cover w-full min-h-full rounded max-h-60"
       />
       <div className="absolute inset-0 flex items-center justify-center gap-2 text-white bg-gray-500 bg-opacity-50 opacity-0 hover:opacity-100">
         <FaEye size={32} />
