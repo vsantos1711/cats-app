@@ -1,5 +1,6 @@
 "use client";
 
+import CommentForm from "./commentForm";
 import Photo from "./photo";
 
 import { Post } from "./post";
@@ -14,9 +15,9 @@ export default function Feed() {
       author: "Tyrion Lannister",
       catInfos: {
         name: "Viserion",
-        age: 1,
+        age: "1",
         breed: "Dragon Cat",
-        weight: 5,
+        weight: "5",
       },
       comments: [
         {
@@ -78,9 +79,9 @@ export default function Feed() {
       author: "Sansa Stark",
       catInfos: {
         name: "Ghost",
-        age: 3,
+        age: "3",
         breed: "Direcat",
-        weight: 6,
+        weight: "6",
       },
       comments: [
         {
@@ -101,9 +102,9 @@ export default function Feed() {
       author: "Khal Drogo",
       catInfos: {
         name: "Khalessi",
-        age: 4,
+        age: "4",
         breed: "Dothrakicat",
-        weight: 8,
+        weight: "8",
       },
       comments: [
         {
@@ -124,9 +125,9 @@ export default function Feed() {
       author: "Arya Stark",
       catInfos: {
         name: "Needle",
-        age: 2,
+        age: "2",
         breed: "Facelesscat",
-        weight: 4,
+        weight: "4",
       },
       comments: [
         {
@@ -142,9 +143,9 @@ export default function Feed() {
       author: "Jaime Lannister",
       catInfos: {
         name: "Lionheart",
-        age: 5,
+        age: "5",
         breed: "Lannistercat",
-        weight: 7,
+        weight: "7",
       },
       comments: [
         {
@@ -165,9 +166,9 @@ export default function Feed() {
       author: "Night King",
       catInfos: {
         name: "White Walker",
-        age: 3,
+        age: "3",
         breed: "Undeadcat",
-        weight: 10,
+        weight: "10",
       },
       comments: [
         {
@@ -211,7 +212,27 @@ export default function Feed() {
       {selectedPost && (
         <Post.Root onclick={closeImage}>
           <Post.ImageWrapper url={selectedPost.url} />
-          <Post.InfoWrapper>Muita coisa aqui</Post.InfoWrapper>
+          <Post.InfoWrapper>
+            <Post.LinkWrapper>
+              <Post.Author author={selectedPost.author} />
+              <Post.Views views={selectedPost.views} />
+            </Post.LinkWrapper>
+            <Post.TitleWrapper>
+              <Post.Title title={selectedPost.catInfos.name} />
+              <Post.CatBread catBread={selectedPost.catInfos.breed} />
+            </Post.TitleWrapper>
+            <Post.CatInfoWrapper>
+              <Post.CatInfo label="Years" value={selectedPost.catInfos.age} />
+              <Post.CatInfo
+                label="Weight"
+                value={selectedPost.catInfos.weight + " kg"}
+              />
+            </Post.CatInfoWrapper>
+            <Post.CommentsWrapper>
+              <Post.Comments comments={selectedPost.comments} />
+            </Post.CommentsWrapper>
+            <CommentForm />
+          </Post.InfoWrapper>
         </Post.Root>
       )}
     </main>
