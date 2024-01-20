@@ -1,21 +1,15 @@
 "use client";
 
 import Photo from "./photo";
-import catOne from "../assets/img/cat-one.jpg";
-import catTwo from "../assets/img/cat-two.jpg";
-import catThree from "../assets/img/cat-three.jpg";
-import catFour from "../assets/img/cat-four.jpg";
-import catFive from "../assets/img/cat-five.jpg";
-import catSix from "../assets/img/cat-six.jpg";
 
-import { useState } from "react";
-import Post from "./post";
+import { Post } from "./post";
 import { PostData } from "@/types/post";
+import { useState } from "react";
 
 export default function Feed() {
   const itemsPageOne: PostData[] = [
     {
-      url: catSix,
+      url: "https://cdn2.thecatapi.com/images/dhn.jpg",
       views: "250000",
       author: "Tyrion Lannister",
       catInfos: {
@@ -79,7 +73,7 @@ export default function Feed() {
       variant: "top-right",
     },
     {
-      url: catTwo,
+      url: "https://cdn2.thecatapi.com/images/46k.jpg",
       views: "45000",
       author: "Sansa Stark",
       catInfos: {
@@ -102,7 +96,7 @@ export default function Feed() {
       ],
     },
     {
-      url: catThree,
+      url: "https://cdn2.thecatapi.com/images/9pl.jpg",
       views: "18000",
       author: "Khal Drogo",
       catInfos: {
@@ -125,7 +119,7 @@ export default function Feed() {
       ],
     },
     {
-      url: catFour,
+      url: "https://cdn2.thecatapi.com/images/dl2.jpg",
       views: "5000",
       author: "Arya Stark",
       catInfos: {
@@ -143,7 +137,7 @@ export default function Feed() {
       ],
     },
     {
-      url: catFive,
+      url: "https://cdn2.thecatapi.com/images/6um.jpg",
       views: "120000",
       author: "Jaime Lannister",
       catInfos: {
@@ -166,7 +160,7 @@ export default function Feed() {
       ],
     },
     {
-      url: catOne,
+      url: "https://cdn2.thecatapi.com/images/0XYvRd7oD.jpg",
       views: "8000",
       author: "Night King",
       catInfos: {
@@ -214,7 +208,12 @@ export default function Feed() {
         ))}
       </div>
 
-      {selectedPost && <Post post={selectedPost} onclick={closeImage} />}
+      {selectedPost && (
+        <Post.Root onclick={closeImage}>
+          <Post.ImageWrapper url={selectedPost.url} />
+          <Post.InfoWrapper>Muita coisa aqui</Post.InfoWrapper>
+        </Post.Root>
+      )}
     </main>
   );
 }
