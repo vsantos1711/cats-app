@@ -1,23 +1,23 @@
 import { StaticImageData } from "next/image";
 
-type Comment = {
+export type PostComment = {
   id: number;
   author: string;
   text: string;
 };
 
-type CatInfos = {
+export type CatInfos = {
   name: string;
-  age?: number;
-  breed?: string;
-  weight?: number;
+  age: string;
+  breed: string;
+  weight: string;
 };
 
 export type PostData = {
   url: string;
   views: string;
-  author?: string;
+  author: string;
   catInfos: CatInfos;
-  comments?: Comment[];
+  comments: PostComment[];
   variant?: "top-right" | "top-left" | "bot-right" | "bot-left" | undefined;
 };
