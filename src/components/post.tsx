@@ -1,11 +1,8 @@
+import { Link } from "@/navigation";
+import { PostComment } from "@/types/post";
+import { ScrollArea } from "@/components/ui/scroll-area";
 import { useRef } from "react";
-
-// type PostProps = {
-//   post: PostData;
-//   url?: string | StaticImageData;
-//   onclick: () => void;
-//   views?: string | number;
-// };
+import { FaEye } from "react-icons/fa";
 
 const Root = ({
   children,
@@ -28,7 +25,10 @@ const Root = ({
       className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-sm bg-white/1"
       onClick={handleClick}
     >
-      <div className="flex flex-col md:flex-row rounded overflow-scroll md:overflow-hidden m-3 w-[900px] h-[600px] bg-[#f0f0f0] dark:bg-slate-600 ">
+      <div
+        className="flex flex-col md:flex-row rounded overflow-scroll 
+      md:overflow-hidden m-3 w-[900px] h-[600px] bg-[#f0f0f0] dark:bg-slate-600 "
+      >
         {children}
       </div>
     </div>
@@ -40,7 +40,7 @@ const ImageWrapper = ({ url }: { url: string }) => {
     <img
       alt="cat"
       src={url}
-      className="object-cover md:w-[62%] sm:min-h-full  max-h-[60%] w-full "
+      className="object-cover w-full md:w-[62%] h-[50%] sm:min-h-full "
     />
   );
 };
@@ -53,90 +53,96 @@ const InfoWrapper = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-// export default function Post({ post, onclick }: PostProps) {
-//   const outerDivRef = useRef(null);
+const LinkWrapper = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <div className="flex justify-between w-full mb-4 text-sm text-gray-400 dark:text-gray-300">
+      {children}
+    </div>
+  );
+};
 
-//   const handleClick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-//     if (event.target === outerDivRef.current) {
-//       onclick();
-//     }
-//   };
+const Author = ({ author }: { author: string }) => {
+  return (
+    <Link
+      className="underline hover:text-blue-700 dark:hover:text-white"
+      href="#"
+    >
+      @{author}
+    </Link>
+  );
+};
 
-//   return (
-//     <div
-//       ref={outerDivRef}
-//       className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-sm bg-white/1"
-//       onClick={handleClick}
-//     >
-//       <div className="flex flex-col md:flex-row rounded overflow-scroll md:overflow-hidden m-3 w-[900px] h-[600px] bg-[#f0f0f0] dark:bg-slate-600 ">
-//         <div className="relative md:w-[62%] md:min-h-full min-h-[65%]">
-//           <Image alt="cat" src={post.url} fill objectFit="cover" />
-//         </div>
-//         <div className="flex flex-col justify-around flex-1 h-full p-5">
-//           <div className="flex justify-between w-full mb-4 text-sm text-gray-400 dark:text-gray-300">
-//             <Link
-//               className="underline hover:text-blue-700 dark:hover:text-white"
-//               href="#"
-//             >
-//               @{post.author}
-//             </Link>
-//             <p className="flex items-center gap-1 ">
-//               <FaEye size={15} />
-//               <span>{post.views}</span>
-//             </p>
-//           </div>
+const Views = ({ views }: { views: string | number }) => {
+  return (
+    <p className="flex items-center gap-1 ">
+      <FaEye size={15} />
+      <span>{views}</span>
+    </p>
+  );
+};
 
-//           <div className="flex items-end justify-between mb-2 ">
-//             <h2 className="text-3xl text-decoration">{post.catInfos.name}</h2>
-//             <div className="flex items-center gap-1 text-end ">
-//               <p className="text-sm text-gray-400 text-nowrap ">
-//                 Breed:{" "}
-//                 <span className="text-black dark:text-white ">
-//                   {post.catInfos.breed ?? "N/A"}
-//                 </span>
-//               </p>
-//             </div>
-//           </div>
+const TitleWrapper = ({ children }: { children: React.ReactNode }) => {
+  return <div className="flex items-end justify-between mb-2 ">{children}</div>;
+};
 
-//           <div className="flex items-center gap-4 ">
-//             <div className="flex items-center gap-1 ">
-//               <p className="text-sm text-gray-400 ">
-//                 Years:{" "}
-//                 <span className="text-black dark:text-white ">
-//                   {post.catInfos.age}
-//                 </span>
-//               </p>
-//             </div>
+const Title = ({ title }: { title: string }) => {
+  return <h2 className="text-3xl text-decoration">{title}</h2>;
+};
+const CatBread = ({ catBread }: { catBread: string }) => {
+  return (
+    <div className="flex items-center gap-1 text-end ">
+      <p className="text-sm text-gray-400 text-nowrap ">
+        Breed:{" "}
+        <span className="text-black dark:text-white ">{catBread ?? "N/A"}</span>
+      </p>
+    </div>
+  );
+};
 
-//             <div className="flex items-center gap-1">
-//               <p className="text-sm text-gray-400 ">
-//                 Weight:{" "}
-//                 <span className="text-black dark:text-white ">
-//                   {post.catInfos.weight}kg
-//                 </span>
-//               </p>
-//             </div>
-//           </div>
+const CatInfoWrapper = ({ children }: { children: React.ReactNode }) => {
+  return <div className="flex items-center gap-4 ">{children}</div>;
+};
 
-//           <div className="flex flex-col gap-2 ">
-//             <ScrollArea className="p-1 py-5 rounded-md sm:py-2 sm:h-80">
-//               {post.comments?.map((comment, index) => (
-//                 <p key={index} className="my-0.5 font-semibold ">
-//                   {comment.author}:{" "}
-//                   <span className="font-light"> {comment.text}</span>
-//                 </p>
-//               ))}
-//             </ScrollArea>
-//           </div>
-//           <CommentForm />
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
+const CatInfo = ({ label, value }: { label: string; value: string }) => {
+  return (
+    <div className="flex items-center gap-1">
+      <p className="text-sm text-gray-400 ">
+        {label}: <span className="text-black dark:text-white ">{value}</span>
+      </p>
+    </div>
+  );
+};
+
+const CommentsWrapper = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <div className="flex flex-col gap-2 ">
+      <ScrollArea className="p-1 py-5 rounded-md sm:py-2 sm:h-80">
+        {children}
+      </ScrollArea>
+    </div>
+  );
+};
+
+const Comments = ({ comments }: { comments: PostComment[] }) => {
+  return comments.map((comment, index) => (
+    <p key={index} className="my-0.5 font-semibold ">
+      {comment.author}: <span className="font-light"> {comment.text}</span>
+    </p>
+  ));
+};
 
 export const Post = {
   Root,
   ImageWrapper,
   InfoWrapper,
+  LinkWrapper,
+  Author,
+  Views,
+  TitleWrapper,
+  Title,
+  CatBread,
+  CatInfoWrapper,
+  CatInfo,
+  CommentsWrapper,
+  Comments,
 };
