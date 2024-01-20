@@ -14,7 +14,7 @@ type CatInfos = {
 };
 
 export type PostData = {
-  url: string | StaticImageData;
+  url: string;
   views: string;
   author?: string;
   catInfos: CatInfos;
