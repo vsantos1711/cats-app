@@ -6,10 +6,10 @@
   },
   "LoginPage": {
     "title": "Acessar",
-    "label-one" : "Usuário",
-    "label-two" : "Senha",
+    "label-one": "Usuário",
+    "label-two": "Senha",
     "button": "Entrar",
-    "link" : "Esqueceu a senha?",
+    "link": "Esqueceu a senha?",
     "title-two": "Criar conta",
     "text": "Ainda não possui conta? Cadastre-se no site.",
     "button-two": "Criar conta"
@@ -34,13 +34,13 @@
     "placeholder-one": "Seu e-mail na plataforma...",
     "placeholder-two": "O código enviado para o seu e-mail",
     "button": "Enviar E-mail",
-    "button-two": "Recuperar senha"
-    },
-  "Header":{
+    "button-two": "Recuperar senha",
+    "link": "Voltar para o login"
+  },
+  "Header": {
     "text": "Entrar/ Criar"
   },
   "Footer": {
     "text": "Feito com 💜 por "
   }
-  
 }

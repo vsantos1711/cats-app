@@ -34,7 +34,8 @@
     "placeholder-one": "Your email on the platform...",
     "placeholder-two": "The code sent to your email",
     "button": "Send Email",
-    "button-two": "Recovery password"
+    "button-two": "Recovery password",
+    "link": "Back to login"
   },
   "Header": {
     "text": "Sing in/ Sign up"
