@@ -1,6 +1,4 @@
 import { Link } from "@/navigation";
-import Image from "next/image";
-import mainCat from "@/assets/img/main-cat.jpg";
 import { Button } from "@/components/ui/button";
 import LoginForm from "@/components/loginForm";
 import pick from "lodash/pick";
@@ -20,6 +18,7 @@ export default function LoginPage() {
         <div className="relative w-0 md:w-1/2">
           <img
             src="https://cdn2.thecatapi.com/images/0XYvRd7oD.jpg"
+            alt="a big cat image"
             className="object-cover w-full h-screen rounded"
           />
         </div>
