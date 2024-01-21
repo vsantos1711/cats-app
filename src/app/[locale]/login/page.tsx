@@ -17,12 +17,10 @@ export default function LoginPage() {
   return (
     <div className="min-h-screen transition duration-300 dark:bg-slate-700 dark:text-slate-100">
       <div className="flex w-full">
-        <div className="relative h-screen md:w-1/2 ">
-          <Image
-            src={mainCat}
-            alt="A golden cat"
-            fill
-            className="object-cover shadow-lg animate-fade-in dark:border-none"
+        <div className="relative w-0 md:w-1/2">
+          <img
+            src="https://cdn2.thecatapi.com/images/0XYvRd7oD.jpg"
+            className="object-cover w-full h-screen rounded"
           />
         </div>
 
