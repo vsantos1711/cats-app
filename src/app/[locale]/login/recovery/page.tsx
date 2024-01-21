@@ -1,5 +1,3 @@
-import Image from "next/image";
-import registerCat from "@/assets/img/cat-eight.jpg";
 import RecoveryForm from "@/components/recoveryForm";
 import {
   NextIntlClientProvider,
@@ -7,6 +5,7 @@ import {
   useTranslations,
 } from "next-intl";
 import { pick } from "lodash";
+import { Link } from "@/navigation";
 
 export default function RecoveryPage() {
   const t = useTranslations("RecoveryPage");
@@ -15,11 +14,10 @@ export default function RecoveryPage() {
     <div className="min-h-screen transition duration-300 dark:bg-slate-700 dark:text-slate-100">
       <div className="flex w-full">
         <div className="relative h-screen md:w-1/2">
-          <Image
-            src={registerCat}
-            alt="A golden cat"
-            fill
-            className="object-cover shadow-lg animate-fade-in dark:border-none"
+          <img
+            src="https://cdn2.thecatapi.com/images/35ayLP9Ql.jpg"
+            alt="a big cat image"
+            className="object-cover w-full h-screen rounded"
           />
         </div>
         <div className="flex flex-col justify-center w-full gap-5 p-8 md:w-1/2">
