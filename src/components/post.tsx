@@ -116,7 +116,7 @@ const CatInfo = ({ label, value }: { label: string; value: string }) => {
 const CommentsWrapper = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="flex flex-col gap-2 ">
-      <ScrollArea className="p-1 py-5 rounded-md sm:py-2 sm:h-80">
+      <ScrollArea className="p-1 py-5 rounded-md h-60 sm:py-2 sm:h-80">
         {children}
       </ScrollArea>
     </div>

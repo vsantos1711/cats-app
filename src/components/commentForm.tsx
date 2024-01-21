@@ -25,18 +25,18 @@ export default function CommentForm() {
   return (
     <Form {...form}>
       <form
-        className="flex items-center justify-between w-full "
+        className="flex items-center justify-between gap-4 "
         onSubmit={form.handleSubmit(onSubmit)}
       >
         <FormField
           control={form.control}
           name="comment"
           render={({ field }) => (
-            <FormItem>
+            <FormItem className="w-full">
               <FormControl>
                 <Textarea
                   placeholder="Add a comment..."
-                  className="p-1 bg-gray-200 rounded w-60 dark:bg-slate-500 dark:border-gray-500 hover:ring-1 hover:ring-gray-900"
+                  className="w-56 p-1 bg-gray-200 rounded sm:w-full dark:bg-slate-500 dark:border-gray-500 hover:ring-1 hover:ring-gray-900"
                   {...field}
                 />
               </FormControl>

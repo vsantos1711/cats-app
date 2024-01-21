@@ -161,7 +161,7 @@ export default function Feed() {
       ],
     },
     {
-      url: "https://cdn2.thecatapi.com/images/0XYvRd7oD.jpg",
+      url: "https://cdn2.thecatapi.com/images/MTgzODA0OA.jpg",
       views: "8000",
       author: "Night King",
       catInfos: {
