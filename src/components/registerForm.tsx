@@ -13,10 +13,11 @@ import { Button } from "@/components/ui/button";
 import { TRegisterSchema, registerSchema } from "@/lib/types";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { Link } from "@/navigation";
+import { userRegister } from "@/services/api/user/user-register.service";
 
 export default function RegisterForm() {
   const t = useTranslations("RegisterPage");
+
   const form = useForm<TRegisterSchema>({
     resolver: zodResolver(registerSchema),
     defaultValues: {
@@ -28,10 +29,7 @@ export default function RegisterForm() {
   });
 
   const onSubmit = async (data: TRegisterSchema) => {
-    // TODO: submit to server
-    // ...
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    form.reset();
+    await userRegister(data);
   };
 
   return (
