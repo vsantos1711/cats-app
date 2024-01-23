@@ -14,6 +14,7 @@ import { TLoginSchema, loginSchema } from "@/lib/types";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
+import { userLogin } from "@/services/api/user/user-login.service";
 
 export default function LoginForm() {
   const t = useTranslations("LoginPage");
@@ -22,9 +23,7 @@ export default function LoginForm() {
   });
 
   const onSubmit = async (data: TLoginSchema) => {
-    // TODO: submit to server
-    // ...
-    await new Promise((resolve) => setTimeout(resolve, 3000));
+    await userLogin(data);
   };
 
   return (
