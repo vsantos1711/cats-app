@@ -14,7 +14,7 @@ export default function RegisterPage() {
   return (
     <div className="min-h-screen transition duration-300 dark:bg-slate-700 dark:text-slate-100">
       <div className="flex w-full">
-        <div className="relative h-screen md:w-1/2">
+        <div className="relative w-0 h-screen md:w-1/2">
           <img
             src="https://cdn2.thecatapi.com/images/nqS9tUT3i.jpg"
             alt="a big cat image"
