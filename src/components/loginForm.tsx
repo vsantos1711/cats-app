@@ -15,15 +15,26 @@ import { TLoginSchema, loginSchema } from "@/lib/types";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { userLogin } from "@/services/api/user/user-login.service";
+import { useRouter } from "@/navigation";
+import { userStore } from "@/store/user-store";
 
 export default function LoginForm() {
   const t = useTranslations("LoginPage");
+  const router = useRouter();
+
   const form = useForm<TLoginSchema>({
     resolver: zodResolver(loginSchema),
   });
 
   const onSubmit = async (data: TLoginSchema) => {
-    await userLogin(data);
+    const res = await userLogin(data);
+
+    userStore.setState({
+      username: res.username,
+      accessToken: res.accessToken,
+    });
+
+    if (res) router.push("/");
   };
 
   return (

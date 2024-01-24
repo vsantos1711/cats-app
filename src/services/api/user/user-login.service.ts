@@ -8,7 +8,7 @@ type UserLoginPayload = {
 export const userLogin = async (payload: UserLoginPayload) => {
   try {
     const { data } = await api.post("/auth/login", payload);
-    console.log(data);
+    return data;
   } catch (error) {
     console.error(error);
   }
