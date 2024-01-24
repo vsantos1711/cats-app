@@ -32,12 +32,12 @@ export default function LoginPage() {
             <LoginForm />
           </NextIntlClientProvider>
 
-          <Link
+          {/* <Link
             href="login/recovery"
             className="mb-10 font-normal text-gray-500 underline hover:text-gray-700 decoration-solid max-w-fit dark:text-gray-200 dark:hover:text-gray-400 "
           >
             {t("link")}
-          </Link>
+          </Link> */}
 
           <div className="flex flex-col w-full gap-4">
             <h2 className="w-full text-3xl font-semibold text-start">
