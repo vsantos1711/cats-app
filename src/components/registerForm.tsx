@@ -14,9 +14,11 @@ import { TRegisterSchema, registerSchema } from "@/lib/types";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { userRegister } from "@/services/api/user/user-register.service";
+import { useToast } from "./ui/use-toast";
 
 export default function RegisterForm() {
   const t = useTranslations("RegisterPage");
+  const { toast } = useToast();
 
   const form = useForm<TRegisterSchema>({
     resolver: zodResolver(registerSchema),
@@ -29,7 +31,21 @@ export default function RegisterForm() {
   });
 
   const onSubmit = async (data: TRegisterSchema) => {
-    await userRegister(data);
+    try {
+      await userRegister(data);
+      toast({
+        title: "Account created!",
+        description: "Time to access the app!",
+        duration: 2000,
+      });
+    } catch (error) {
+      toast({
+        title: "Erro",
+        description: "Something gone wrong... Try again, please",
+        variant: "destructive",
+        duration: 2000,
+      });
+    }
   };
 
   return (
