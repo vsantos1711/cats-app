@@ -8,10 +8,7 @@ type UserRegisterPayload = {
 };
 
 export const userRegister = async (payload: UserRegisterPayload) => {
-  try {
-    const { data } = await api.post("/user/create", payload);
-    console.log(data);
-  } catch (error) {
-    console.error(error);
-  }
+  const { data } = await api.post("/user/create", payload);
+
+  return data;
 };
