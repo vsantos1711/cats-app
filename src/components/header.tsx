@@ -4,7 +4,7 @@ import Logo from "./logo";
 import { ToggleTheme } from "./toggleTheme";
 import { useTranslations } from "next-intl";
 import { userStore } from "@/store/user-store";
-import { AvatarIcon } from "@radix-ui/react-icons";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 export default function Header() {
   const t = useTranslations("Header");
@@ -21,7 +21,10 @@ export default function Header() {
             className="flex items-center gap-2 text-lg font-medium"
           >
             {userData}
-            <AvatarIcon width={25} height={25} />
+            <Avatar>
+              <AvatarImage src="https://cdn2.thecatapi.com/images/0XYvRd7oD.jpg" />
+              <AvatarFallback>CN</AvatarFallback>
+            </Avatar>
           </Link>
         ) : (
           <Link href={`/login`} className="text-lg font-medium">
