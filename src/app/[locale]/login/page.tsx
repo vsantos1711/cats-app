@@ -44,7 +44,7 @@ export default function LoginPage() {
               {t("title-two")}
             </h2>
             <p className="font-normal">{t("text")}</p>
-            <Link href="login/register">
+            <Link href="/login/register">
               <Button variant="tertiary">{t("button-two")}</Button>
             </Link>
           </div>
