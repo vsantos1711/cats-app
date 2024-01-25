@@ -4,6 +4,9 @@ import "@/styles/globals.css";
 import Header from "@/components/header";
 import Providers from "@/providers/provider";
 import Footer from "@/components/footer";
+import { NextIntlClientProvider, useMessages } from "next-intl";
+import { pick } from "lodash";
+import { Toaster } from "@/components/ui/toaster";
 
 const poppins = Poppins({
   weight: ["100", "300", "400", "500", "600", "900"],
@@ -25,14 +28,20 @@ export default function RootLayout({
   children: React.ReactNode;
   params: { locale: string };
 }) {
+  const messages = useMessages();
+
   return (
     <html lang={locale} suppressHydrationWarning>
       <body className={poppins.className}>
         <Providers>
-          <Header />
+          <NextIntlClientProvider messages={pick(messages, "Header")}>
+            <Header />
+          </NextIntlClientProvider>
+
           {children}
           <Footer />
         </Providers>
+        <Toaster />
       </body>
     </html>
   );
