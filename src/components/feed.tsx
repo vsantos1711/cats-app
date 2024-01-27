@@ -1,7 +1,7 @@
 "use client";
 
-import CommentForm from "./commentForm";
 import Photo from "./photo";
+import CommentForm from "./commentForm";
 
 import { Post } from "./post";
 import { PostData } from "@/types/post";

@@ -1,4 +1,4 @@
-import { Link } from "@/navigation";
+import Link from "next/link";
 import { PostComment } from "@/types/post";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { useRef } from "react";

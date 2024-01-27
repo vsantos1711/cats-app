@@ -7,16 +7,13 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { useTranslations } from "next-intl";
+import { useForm } from "react-hook-form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { TRecoverySchema, recoverySchema } from "@/lib/types";
 
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-
 export default function LoginForm() {
-  const t = useTranslations("RecoveryPage");
   const form = useForm<TRecoverySchema>({
     resolver: zodResolver(recoverySchema),
     defaultValues: {
@@ -40,11 +37,11 @@ export default function LoginForm() {
             name="email"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>{t("label-one")}</FormLabel>
+                <FormLabel>E-mail do Usuário</FormLabel>
                 <FormControl>
                   <Input
                     type="email"
-                    placeholder={t("placeholder-one")}
+                    placeholder="Seu e-mail na plataforma..."
                     {...field}
                   />
                 </FormControl>
@@ -57,9 +54,12 @@ export default function LoginForm() {
             name="activationCode"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>{t("label-two")}</FormLabel>
+                <FormLabel>Código de confirmação</FormLabel>
                 <FormControl>
-                  <Input placeholder={t("placeholder-two")} {...field} />
+                  <Input
+                    placeholder="O código enviado para o seu e-mail"
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -68,14 +68,14 @@ export default function LoginForm() {
         </div>
         <div className="flex items-center justify-between max-w-md">
           <Button type="submit" disabled={form.formState.isSubmitting}>
-            {t("button")}
+            Enviar E-mail
           </Button>
           <Button
             type="submit"
             variant="tertiary"
             disabled={form.formState.isSubmitting}
           >
-            {t("button-two")}
+            Recuperar senha
           </Button>
         </div>
       </form>

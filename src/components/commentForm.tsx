@@ -1,11 +1,11 @@
 "use client";
-import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
-import { commentSchema, TCommentSchema } from "@/lib/types";
 import Logo from "./logo";
 import { Button } from "./ui/button";
 import { Textarea } from "./ui/textarea";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { commentSchema, TCommentSchema } from "@/lib/types";
+import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
 
 export default function CommentForm() {
   const form = useForm<TCommentSchema>({

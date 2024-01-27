@@ -7,18 +7,16 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { useTranslations } from "next-intl";
+import { useForm } from "react-hook-form";
+import { useToast } from "./ui/use-toast";
+import { useRouter } from "next/navigation";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { TLoginSchema, loginSchema } from "@/lib/types";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
+import { TLoginSchema, loginSchema } from "@/lib/types";
 import { userLogin } from "@/services/api/user/user-login.service";
-import { useRouter } from "@/navigation";
-import { useToast } from "./ui/use-toast";
 
 export default function LoginForm() {
-  const t = useTranslations("LoginPage");
   const router = useRouter();
   const { toast } = useToast();
 
@@ -55,7 +53,7 @@ export default function LoginForm() {
             name="username"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>{t("label-one")}</FormLabel>
+                <FormLabel>Usuário</FormLabel>
                 <FormControl>
                   <Input type="text" {...field} />
                 </FormControl>
@@ -68,7 +66,7 @@ export default function LoginForm() {
             name="password"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>{t("label-two")}</FormLabel>
+                <FormLabel>Senha</FormLabel>
                 <FormControl>
                   <Input type="password" {...field} />
                 </FormControl>
@@ -78,7 +76,7 @@ export default function LoginForm() {
           />
         </div>
         <Button type="submit" disabled={form.formState.isSubmitting}>
-          Submit
+          Acessar
         </Button>
       </form>
     </Form>

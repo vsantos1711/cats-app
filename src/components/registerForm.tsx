@@ -7,17 +7,15 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { useTranslations } from "next-intl";
+import { useToast } from "./ui/use-toast";
+import { useForm } from "react-hook-form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { TRegisterSchema, registerSchema } from "@/lib/types";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
+import { TRegisterSchema, registerSchema } from "@/lib/types";
 import { userRegister } from "@/services/api/user/user-register.service";
-import { useToast } from "./ui/use-toast";
 
 export default function RegisterForm() {
-  const t = useTranslations("RegisterPage");
   const { toast } = useToast();
 
   const form = useForm<TRegisterSchema>({
@@ -57,9 +55,12 @@ export default function RegisterForm() {
             name="username"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>{t("label-one")}</FormLabel>
+                <FormLabel>Usuário</FormLabel>
                 <FormControl>
-                  <Input placeholder={t("placeholder-one")} {...field} />
+                  <Input
+                    placeholder="Digite um nome de usuário legal..."
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -70,10 +71,10 @@ export default function RegisterForm() {
             name="email"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>{t("label-two")}</FormLabel>
+                <FormLabel>Email</FormLabel>
                 <FormControl>
                   <Input
-                    placeholder={t("placeholder-two")}
+                    placeholder="Seu melhor e-mail"
                     type="email"
                     {...field}
                   />
@@ -87,10 +88,10 @@ export default function RegisterForm() {
             name="password"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>{t("label-three")}</FormLabel>
+                <FormLabel>Senha</FormLabel>
                 <FormControl>
                   <Input
-                    placeholder={t("placeholder-three")}
+                    placeholder="Digite uma senha forte"
                     type="password"
                     {...field}
                   />
@@ -104,10 +105,10 @@ export default function RegisterForm() {
             name="confirmPassword"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>{t("label-four")}</FormLabel>
+                <FormLabel>Confirmar senha</FormLabel>
                 <FormControl>
                   <Input
-                    placeholder={t("placeholder-four")}
+                    placeholder="Confirme sua senha..."
                     type="password"
                     {...field}
                   />
@@ -118,7 +119,7 @@ export default function RegisterForm() {
           />
         </div>
         <Button type="submit" disabled={form.formState.isSubmitting}>
-          {t("button")}
+          Registrar
         </Button>
       </form>
     </Form>

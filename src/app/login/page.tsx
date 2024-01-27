@@ -1,17 +1,8 @@
-import { Link } from "@/navigation";
-import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import LoginForm from "@/components/loginForm";
-import pick from "lodash/pick";
-import {
-  NextIntlClientProvider,
-  useMessages,
-  useTranslations,
-} from "next-intl";
+import { Button } from "@/components/ui/button";
 
 export default function LoginPage() {
-  const t = useTranslations("LoginPage");
-  const messages = useMessages();
-
   return (
     <div className="min-h-screen transition duration-300 dark:bg-slate-700 dark:text-slate-100">
       <div className="flex w-full">
@@ -24,13 +15,9 @@ export default function LoginPage() {
         </div>
 
         <div className="flex flex-col justify-center gap-5 p-8 md:w-1/2">
-          <h1 className="w-full text-5xl font-semibold text-start">
-            {t("title")}
-          </h1>
+          <h1 className="w-full text-5xl font-semibold text-start">Acessar</h1>
 
-          <NextIntlClientProvider messages={pick(messages, "LoginPage")}>
-            <LoginForm />
-          </NextIntlClientProvider>
+          <LoginForm />
 
           {/* <Link
             href="login/recovery"
@@ -41,11 +28,13 @@ export default function LoginPage() {
 
           <div className="flex flex-col w-full gap-4">
             <h2 className="w-full text-3xl font-semibold text-start">
-              {t("title-two")}
+              Criar conta
             </h2>
-            <p className="font-normal">{t("text")}</p>
+            <p className="font-normal">
+              Ainda não possui conta? Cadastre-se no site.
+            </p>
             <Link href="/login/register">
-              <Button variant="tertiary">{t("button-two")}</Button>
+              <Button variant="tertiary">Criar conta</Button>
             </Link>
           </div>
         </div>

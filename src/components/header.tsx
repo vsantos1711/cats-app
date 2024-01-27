@@ -1,12 +1,10 @@
-import { Link } from "@/navigation";
+import Link from "next/link";
 import Logo from "./logo";
-import { ToggleTheme } from "./toggleTheme";
-import { useTranslations } from "next-intl";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { cookies } from "next/headers";
+import { ToggleTheme } from "./toggleTheme";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 export default function Header() {
-  const t = useTranslations("Header");
   const username = cookies().get("username")?.value;
   return (
     <header className="relative flex transition duration-300 bg-gray-100 border h-14 dark:border-none dark:bg-gray-800">
@@ -27,7 +25,7 @@ export default function Header() {
           </Link>
         ) : (
           <Link href={`/login`} className="text-lg font-medium">
-            {t("text")}
+            Entrar/ Criar
           </Link>
         )}
       </nav>
