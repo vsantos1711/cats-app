@@ -1,12 +1,11 @@
 "use client";
 
 import Photo from "./photo";
-import CommentForm from "./commentForm";
-
 import { Post } from "./post";
-import { PostData } from "@/types/post";
 import { useState } from "react";
 import { getPosts } from "@/data/feed";
+import { PostData } from "@/types/post";
+import CommentForm from "./commentForm";
 import { useQuery } from "@tanstack/react-query";
 
 export default function Feed() {
