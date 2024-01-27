@@ -1,6 +1,14 @@
 import createMiddleware from "next-intl/middleware";
+import { NextRequest } from "next/server";
 
-export default createMiddleware({
+export function middleware(request: NextRequest) {
+  const userToken = request.cookies.get("token")?.value;
+  console.log("userToken", userToken);
+
+  return i18n(request);
+}
+
+const i18n = createMiddleware({
   locales: ["en", "pt"],
 
   defaultLocale: "en",
