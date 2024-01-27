@@ -15,13 +15,11 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { userLogin } from "@/services/api/user/user-login.service";
 import { useRouter } from "@/navigation";
-import { userStore } from "@/store/user-store";
 import { useToast } from "./ui/use-toast";
 
 export default function LoginForm() {
   const t = useTranslations("LoginPage");
   const router = useRouter();
-  const user = userStore();
   const { toast } = useToast();
 
   const form = useForm<TLoginSchema>({
@@ -30,8 +28,7 @@ export default function LoginForm() {
 
   const onSubmit = async (data: TLoginSchema) => {
     try {
-      const res = await userLogin(data);
-      user.setUserName(res.username);
+      await userLogin(data);
       toast({
         title: "Login",
         description: "Login realizado com sucesso!",
