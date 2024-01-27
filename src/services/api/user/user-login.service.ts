@@ -1,4 +1,6 @@
+"use server";
 import { api } from "../api";
+import { cookies } from "next/headers";
 
 type UserLoginPayload = {
   username: string;
@@ -7,6 +9,6 @@ type UserLoginPayload = {
 
 export const userLogin = async (payload: UserLoginPayload) => {
   const { data } = await api.post("/auth/login", payload);
-
-  return data;
+  cookies().set("username", data.username);
+  cookies().set("token", data.access_token);
 };
