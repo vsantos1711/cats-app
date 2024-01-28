@@ -88,6 +88,7 @@ const TitleWrapper = ({ children }: { children: React.ReactNode }) => {
 const Title = ({ title }: { title: string }) => {
   return <h2 className="text-3xl text-decoration">{title}</h2>;
 };
+
 const CatBread = ({ catBread }: { catBread: string }) => {
   return (
     <div className="flex items-center gap-1 text-end ">
