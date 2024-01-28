@@ -7,7 +7,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 export default function Header() {
   const username = cookies().get("username")?.value;
   return (
-    <header className="relative flex transition duration-300 bg-gray-100 border h-14 dark:border-none dark:bg-gray-800">
+    <header className="flex transition duration-300 bg-gray-100 border h-14 dark:border-none dark:bg-gray-800">
       <nav className="container flex items-center justify-between text-gray-800 dark:text-gray-200 ">
         <Link href="/">
           <Logo size="sm" />
@@ -29,7 +29,6 @@ export default function Header() {
           </Link>
         )}
       </nav>
-      <ToggleTheme />
     </header>
   );
 }

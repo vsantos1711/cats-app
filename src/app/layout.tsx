@@ -22,14 +22,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-  params: { locale },
 }: {
   children: React.ReactNode;
-  params: { locale: string };
 }) {
   return (
-    <html lang={locale} suppressHydrationWarning>
-      <body className={poppins.className}>
+    <html suppressHydrationWarning>
+      <body className={`${poppins.className} dark:bg-slate-700`}>
         <Providers>
           <Header />
           {children}
