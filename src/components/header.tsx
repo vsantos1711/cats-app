@@ -14,7 +14,7 @@ export default function Header() {
         </Link>
         {username ? (
           <Link
-            href={`/user/${username}`}
+            href="/user"
             className="flex items-center gap-3 text-lg font-medium"
           >
             {username}
