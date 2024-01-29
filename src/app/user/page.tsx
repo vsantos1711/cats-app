@@ -1,9 +1,23 @@
 import { cookies } from "next/headers";
 import Logout from "@/components/logout";
+import Unauthorized from "@/components/unauthorized";
 import { ToggleTheme } from "@/components/toggleTheme";
 
 export default async function UserPage() {
-  let username = cookies().get("username")?.value;
+  let userData = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/auth/profile`,
+    {
+      headers: {
+        Authorization: `Bearer ${cookies().get("token")?.value}`,
+      },
+    }
+  );
+
+  if (userData.status === 401) {
+    return <Unauthorized />;
+  }
+
+  const { username } = await userData.json();
 
   return (
     <main className="container min-h-screen py-5 transition duration-300">
