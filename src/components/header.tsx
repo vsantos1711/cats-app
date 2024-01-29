@@ -1,7 +1,6 @@
-import Link from "next/link";
 import Logo from "./logo";
+import Link from "next/link";
 import { cookies } from "next/headers";
-import { ToggleTheme } from "./toggleTheme";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 export default function Header() {

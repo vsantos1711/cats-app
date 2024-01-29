@@ -4,6 +4,7 @@ export async function middleware(req: NextRequest) {
   const userToken = req.cookies.get("token")?.value;
 
   const isAuth = !!userToken;
+
   if (req.nextUrl.pathname.startsWith("/user") && !isAuth) {
     return NextResponse.redirect(new URL("/", req.url));
   }
