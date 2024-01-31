@@ -1,9 +1,9 @@
 import "@/styles/globals.css";
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
 import Header from "@/components/header";
-import Providers from "@/providers/provider";
 import Footer from "@/components/footer";
+import { Poppins } from "next/font/google";
+import Providers from "@/providers/provider";
 
 import { Toaster } from "@/components/ui/toaster";
 

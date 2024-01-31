@@ -3,20 +3,20 @@
 import Photo from "./photo";
 import { Post } from "./post";
 import { useState } from "react";
-import { getPosts } from "@/data/feed";
-import { PostData } from "@/types/post";
+import { IPost } from "@/types/post";
 import CommentForm from "./commentForm";
 import { useQuery } from "@tanstack/react-query";
+import { postList } from "@/services/api/post/post-list.service";
 
 export default function Feed() {
   const { data: posts } = useQuery({
     queryKey: ["posts"],
-    queryFn: getPosts,
+    queryFn: postList,
   });
 
-  const [selectedPost, setSelectedPost] = useState<PostData | null>(null);
+  const [selectedPost, setSelectedPost] = useState<IPost | null>(null);
 
-  const handleImageClick = (post: PostData) => {
+  const handleImageClick = (post: IPost) => {
     setSelectedPost(post);
   };
   const closeImage = () => {
@@ -26,12 +26,12 @@ export default function Feed() {
   return (
     <main className="container flex flex-col gap-4 pt-2">
       <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-        {posts?.map((post: PostData, index) => (
+        {posts?.map((post: any) => (
           <Photo
             url={post.url}
             views={post.views}
             variant={post.variant}
-            key={index}
+            key={post.id}
             clickEvent={() => handleImageClick(post)}
           />
         ))}
@@ -42,18 +42,18 @@ export default function Feed() {
           <Post.ImageWrapper url={selectedPost.url} />
           <Post.InfoWrapper>
             <Post.LinkWrapper>
-              <Post.Author author={selectedPost.author} />
+              <Post.Author author={selectedPost.author.username} />
               <Post.Views views={selectedPost.views} />
             </Post.LinkWrapper>
             <Post.TitleWrapper>
-              <Post.Title title={selectedPost.catInfos.name} />
-              <Post.CatBread catBread={selectedPost.catInfos.breed} />
+              <Post.Title title={selectedPost.catName} />
+              <Post.CatBread catBread={selectedPost.catBreed} />
             </Post.TitleWrapper>
             <Post.CatInfoWrapper>
-              <Post.CatInfo label="Years" value={selectedPost.catInfos.age} />
+              <Post.CatInfo label="Years" value={selectedPost.catAge} />
               <Post.CatInfo
                 label="Weight"
-                value={selectedPost.catInfos.weight + " kg"}
+                value={selectedPost.catWeight + " kg"}
               />
             </Post.CatInfoWrapper>
             <Post.CommentsWrapper>
