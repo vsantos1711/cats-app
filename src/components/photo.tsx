@@ -6,7 +6,7 @@ type PhotoProps = ComponentProps<"div"> &
   VariantProps<typeof photo> & {
     url: string;
     alt?: string;
-    views: string;
+    views?: string;
     clickEvent: () => void;
   };
 

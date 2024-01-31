@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { PostComment } from "@/types/post";
+import { IComment } from "@/types/post";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { useRef } from "react";
 import { FaEye } from "react-icons/fa";
@@ -124,10 +124,11 @@ const CommentsWrapper = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-const Comments = ({ comments }: { comments: PostComment[] }) => {
+const Comments = ({ comments }: { comments: IComment[] }) => {
   return comments.map((comment, index) => (
     <p key={index} className="my-0.5 font-semibold ">
-      {comment.author}: <span className="font-light"> {comment.text}</span>
+      {comment.author.username}:{" "}
+      <span className="font-light"> {comment.text}</span>
     </p>
   ));
 };
