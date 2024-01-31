@@ -1,21 +1,31 @@
-export type PostComment = {
-  id: number;
-  author: string;
-  text: string;
-};
-
-export type CatInfos = {
-  name: string;
-  age: string;
-  breed: string;
-  weight: string;
-};
-
-export type PostData = {
+export interface IPost {
+  id?: string;
   url: string;
-  views: string;
-  author: string;
-  catInfos: CatInfos;
-  comments: PostComment[];
-  variant?: "top-right" | "top-left" | "bot-right" | "bot-left" | undefined;
-};
+  views: number;
+  catName: string;
+  catAge: string;
+  catBreed: string;
+  catWeight?: string;
+  authorId?: string;
+  createdAt?: Date;
+  author: IAuthor;
+  comments: IComment[];
+}
+
+export interface IAuthor {
+  id: string;
+  username: string;
+  email: string;
+  password: string;
+  createdAt?: Date;
+  updatedAt?: Date;
+}
+
+export interface IComment {
+  id: string;
+  text: string;
+  authorId: string;
+  postId: string;
+  author: IAuthor;
+  createdAt?: Date;
+}
