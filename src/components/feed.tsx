@@ -7,6 +7,7 @@ import { IPost } from "@/types/post";
 import CommentForm from "./commentForm";
 import { useQuery } from "@tanstack/react-query";
 import { postList } from "@/services/api/post/post-list.service";
+import { randomVariant } from "@/utils/random-variant";
 
 export default function Feed() {
   const { data: posts } = useQuery({
@@ -23,6 +24,8 @@ export default function Feed() {
     setSelectedPost(null);
   };
 
+  console.log(randomVariant());
+
   return (
     <main className="container flex flex-col gap-4 pt-2">
       <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
@@ -30,7 +33,6 @@ export default function Feed() {
           <Photo
             url={post.url}
             views={post.views}
-            variant={post.variant}
             key={post.id}
             clickEvent={() => handleImageClick(post)}
           />
