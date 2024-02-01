@@ -23,9 +23,9 @@ export default function Feed() {
   const closeImage = () => {
     setSelectedPost(null);
   };
-
-  console.log(randomVariant());
-
+  
+  console.log(posts)
+  
   return (
     <main className="container flex flex-col gap-4 pt-2">
       <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
