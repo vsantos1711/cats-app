@@ -10,6 +10,7 @@ export interface IPost {
   createdAt?: Date;
   author: IAuthor;
   comments: IComment[];
+  variant: "top-right" | "top-left" | "bot-right" | "bot-left" | undefined;
 }
 
 export interface IAuthor {

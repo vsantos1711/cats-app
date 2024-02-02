@@ -6,7 +6,7 @@ type PhotoProps = ComponentProps<"div"> &
   VariantProps<typeof photo> & {
     url: string;
     alt?: string;
-    views?: string;
+    views?: number;
     clickEvent: () => void;
   };
 
@@ -27,7 +27,7 @@ export default function Photo({
   url,
   alt = "a cat image",
   className,
-  views = "0",
+  views = 0,
   clickEvent,
 }: PhotoProps) {
   return (
