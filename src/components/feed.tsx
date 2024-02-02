@@ -11,7 +11,7 @@ import { postList } from "@/services/api/post/post-list.service";
 export default function Feed() {
   const { data: posts } = useQuery({
     queryKey: ["posts"],
-    queryFn: () => postList({ take: 6, skip: 0 }),
+    queryFn: postList,
   });
 
   const [selectedPost, setSelectedPost] = useState<IPost | null>(null);
@@ -23,7 +23,6 @@ export default function Feed() {
     setSelectedPost(null);
   };
 
-  console.log(posts);
   return (
     <main className="container flex flex-col gap-4 pt-2">
       <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
