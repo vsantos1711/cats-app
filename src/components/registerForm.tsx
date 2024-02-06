@@ -19,7 +19,7 @@ export default function RegisterForm() {
   const { toast } = useToast();
 
   const form = useForm<TRegisterSchema>({
-    resolver: zodResolver(registerSchema),
+    resolver: zodResolver(registerSchema), 
     defaultValues: {
       username: "",
       email: "",

@@ -1,5 +1,5 @@
 export interface IPost {
-  id?: string;
+  id: string;
   url: string;
   views: number;
   catName: string;

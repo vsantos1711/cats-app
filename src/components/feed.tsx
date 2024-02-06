@@ -59,7 +59,7 @@ export default function Feed() {
             <Post.CommentsWrapper>
               <Post.Comments comments={selectedPost.comments} />
             </Post.CommentsWrapper>
-            <CommentForm />
+            <CommentForm id={selectedPost.id} />
           </Post.InfoWrapper>
         </Post.Root>
       )}
