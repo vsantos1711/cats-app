@@ -11,11 +11,6 @@ export const postAddComment = async (
   id: string,
 ) => {
   const token = cookies().get("token")?.value;
-
-  console.log(`Add the comment: ${payload}`);
-  console.log(`On the post with the following id: ${id}`);
-  console.log(`Token do usuário que está comentando: ${token}`);
-
   const { data } = await api.post(
     `/post/comment/${id}`,
     {
