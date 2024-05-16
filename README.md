@@ -1,10 +1,10 @@
 <h1 align="center">:cat: MeowHub</h1>
 
-## :dart: Project Status
+## Project Status
 
 <img src="http://img.shields.io/static/v1?label=STATUS&message=IN%20PROGRESS&color=blue&style=for-the-badge"/>
 
-## :memo: Description
+## Description
 
 MeowHub is a straightforward social media platform for cat lovers! Share delightful cat photos, along with names, ages, and more details about your feline friends. Connect with fellow cat enthusiasts and immerse yourself in the world of cats. It's as simple as a purr! 🐱📸 
 
@@ -17,7 +17,7 @@ MeowHub is a straightforward social media platform for cat lovers! Share delight
 [<img src="https://img.shields.io/badge/Zod-3E67B1?style=for-the-badge&logo=zod" />](https://zod.dev/)
 [<img src="https://img.shields.io/badge/shadcnui-000000?style=for-the-badge&logo=shadcnui" />](https://ui.shadcn.com/)
 
-## :rocket: Running the project
+## Running the project
 
 1. Clone the repository and install dependencies:
 
@@ -31,17 +31,8 @@ pnpm install
 pnpm run dev
 ```
 
-## :handshake: Contributors
+## Contributors
 
-<table>
-  <tr>
-    <td align="center">
-      <a href="http://github.com/vsantos1711">
-        <img src="https://avatars.githubusercontent.com/u/104466068?v=4" width="100px;" alt="Foto de Vini Santos no GitHub"/><br>
-        <sub>
-          <b>vsantos1711</b>
-        </sub>
-      </a>
-    </td>
-  </tr>
-</table>
+<a href="https://github.com/vsantos1711/meow-hub/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=vsantos1711/meow-hub" />
+</a>
