@@ -1,5 +1,5 @@
 <!-- Title -->
-<h1 align="center">:cat: MeowHub</h1>
+<h1 align="center"> 🐱 MeowHub</h1>
 
 ## Project Status
 <img src="http://img.shields.io/static/v1?label=STATUS&message=IN%20PROGRESS&color=blue&style=for-the-badge"/>
