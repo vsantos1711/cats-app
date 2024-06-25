@@ -1,21 +1,20 @@
-<!-- Title -->
-<h1 align="center"> 🐱 MeowHub</h1>
+# 🐱 MeowHub
 
 ## Project Status
-<img src="http://img.shields.io/static/v1?label=STATUS&message=IN%20PROGRESS&color=blue&style=for-the-badge"/>
+![Frame](http://img.shields.io/static/v1?label=STATUS&message=IN%20PROGRESS&color=blue&style=for-the-badge)
 
 ## Description
 
 MeowHub is a straightforward social media platform for cat lovers! Share delightful cat photos, along with names, ages, and more details about your feline friends. Connect with fellow cat enthusiasts and immerse yourself in the world of cats. It's as simple as a purr! 🐱📸 
 
-## Tools
+## Technologies Used
 
-[<img src="https://img.shields.io/badge/next%20js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" />](https://nextjs.org/)
-[<img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" />](https://www.typescriptlang.org/)
-[<img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" />](https://tailwindcss.com/)
-[<img src="https://img.shields.io/badge/Vercel-242938?style=for-the-badge&logo=vercel&logoColor=white" />](https://vercel.com/)
-[<img src="https://img.shields.io/badge/Zod-3E67B1?style=for-the-badge&logo=zod" />](https://zod.dev/)
-[<img src="https://img.shields.io/badge/shadcnui-000000?style=for-the-badge&logo=shadcnui" />](https://ui.shadcn.com/)
+- **[Next.js:](https://nextjs.org/)** The React framework used to build MeowHub, providing server-side rendering and static site generation.
+- **[TypeScript:](https://www.typescriptlang.org/)** The primary programming language for the project, ensuring type safety and enhancing code quality.
+- **[TailwindCSS:](https://tailwindcss.com/)** Utility-first CSS framework used for styling MeowHub quickly and efficiently.
+- **[Vercel:](https://vercel.com/)** Platform used to host MeowHub, providing seamless deployment and serverless functions.
+- **[Zod:](https://zod.dev/)** TypeScript-first schema declaration and validation library used for ensuring data integrity.
+- **[Shadcn/ui:](https://ui.shadcn.com/)** Component library used to enhance the user interface of MeowHub.
 
 ## Running the project
 
