@@ -1,21 +1,21 @@
-import { cookies } from "next/headers";
 import Logout from "@/components/logout";
 import Unauthorized from "@/components/unauthorized";
 import { ToggleTheme } from "@/components/toggleTheme";
+import { useGetCookieValue } from "@/utils/hooks/use-cookies";
 
 export default async function UserPage() {
+  const token = await useGetCookieValue("token");
+
   let userData = await fetch(
     `${process.env.NEXT_PUBLIC_API_URL}/auth/profile`,
     {
       headers: {
-        Authorization: `Bearer ${cookies().get("token")?.value}`,
+        Authorization: `Bearer ${token}`,
       },
     }
   );
 
-  if (userData.status === 401) {
-    return <Unauthorized />;
-  }
+  if (userData.status === 401) return <Unauthorized />;
 
   const { username } = await userData.json();
 
