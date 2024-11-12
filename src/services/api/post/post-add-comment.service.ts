@@ -1,16 +1,13 @@
-"use server";
+import { useQueryClient, useMutation } from "@tanstack/react-query";
 import { api } from "../api";
-import { cookies } from "next/headers";
+import { useGetCookieValue } from "@/utils/hooks/use-cookies";
 
 type PostCommentPayload = {
   comment: string;
 };
 
-export const postAddComment = async (
-  payload: PostCommentPayload,
-  id: string
-) => {
-  const token = cookies().get("token")?.value;
+const addComment = async (payload: PostCommentPayload, id: string) => {
+  const token = await useGetCookieValue("token");
   const { data } = await api.post(
     `/post/comment/${id}`,
     { text: payload.comment },
@@ -22,4 +19,15 @@ export const postAddComment = async (
   );
 
   return data;
+};
+
+export const useAddComment = (id: string) => {
+  const queryClient = useQueryClient();
+
+  return useMutation({
+    mutationFn: (payload: PostCommentPayload) => addComment(payload, id),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["postComments"] });
+    },
+  });
 };
