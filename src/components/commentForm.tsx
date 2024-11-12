@@ -6,37 +6,37 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { commentSchema, TCommentSchema } from "@/lib/types";
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
-import { postAddComment } from "@/services/api/post/post-add-comment.service";
 import { useToast } from "./ui/use-toast";
+import { useAddComment } from "@/services/api/post/post-add-comment.service";
 
 export default function CommentForm({ id }: { id: string }) {
   const { toast } = useToast();
 
   const form = useForm<TCommentSchema>({
     resolver: zodResolver(commentSchema),
-    defaultValues: {
-      comment: "",
-    },
   });
 
-  const onSubmit = async (data: TCommentSchema) => {
-    try {
-      await postAddComment(data, id);
-      toast({
-        title: "You added a comment!",
-        description: "Time to access the app!",
-        duration: 2000,
-      });
-    } catch (error) {
-      toast({
-        title: "Erro",
-        description: "Something gone wrong... Try again, please",
-        variant: "destructive",
-        duration: 2000,
-      });
-    }
+  const { mutate: addComment } = useAddComment(id);
 
-    form.reset();
+  const onSubmit = async (data: TCommentSchema) => {
+    addComment(data, {
+      onSuccess: () => {
+        toast({
+          title: "Comentário adicionado!",
+          description: "Seu comentário foi enviado com sucesso.",
+          duration: 2000,
+        });
+        form.setValue("comment", "");
+      },
+      onError: () => {
+        toast({
+          title: "Erro",
+          description: "Algo deu errado... Tente novamente, por favor.",
+          variant: "destructive",
+          duration: 2000,
+        });
+      },
+    });
   };
 
   return (
