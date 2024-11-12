@@ -2,6 +2,6 @@ import { IPost } from "@/types/post";
 import { api } from "../api";
 
 export const postList = async (): Promise<IPost[]> => {
-  const { data } = await api.get("/post/findAll");
+  const { data } = await api.get("/post/listAll");
   return data;
 };

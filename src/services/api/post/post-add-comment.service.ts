@@ -8,19 +8,17 @@ type PostCommentPayload = {
 
 export const postAddComment = async (
   payload: PostCommentPayload,
-  id: string,
+  id: string
 ) => {
   const token = cookies().get("token")?.value;
   const { data } = await api.post(
     `/post/comment/${id}`,
-    {
-      text: payload.comment,
-    },
+    { text: payload.comment },
     {
       headers: {
         Authorization: `Bearer ${token}`,
       },
-    },
+    }
   );
 
   return data;

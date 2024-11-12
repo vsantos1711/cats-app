@@ -36,7 +36,7 @@ export default function LoginForm() {
     } catch (error) {
       toast({
         title: "Erro",
-        description: "Something gone wrong!",
+        description: "Alguma coisa deu errado!",
         variant: "destructive",
         duration: 2000,
       });
