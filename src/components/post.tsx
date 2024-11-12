@@ -1,8 +1,8 @@
 import Link from "next/link";
-import { IComment } from "@/types/post";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { useRef } from "react";
 import { FaEye } from "react-icons/fa";
+import { useFetchPostComments } from "@/services/api/post/post-get-comments.service";
 
 const Root = ({
   children,
@@ -124,8 +124,13 @@ const CommentsWrapper = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-const Comments = ({ comments }: { comments: IComment[] }) => {
-  return comments?.map((comment) => (
+const Comments = ({ id }: { id: string }) => {
+  const fetchPostComments = useFetchPostComments(id);
+
+  if (fetchPostComments.isLoading) return <p>Loading comments...</p>;
+  if (fetchPostComments.error) return <p>Error loading comments</p>;
+
+  return fetchPostComments?.data?.map((comment) => (
     <p key={comment.id} className="my-0.5 font-semibold ">
       {comment.author.username}:{" "}
       <span className="font-light"> {comment.text}</span>
