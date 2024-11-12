@@ -57,7 +57,7 @@ export default function Feed() {
               />
             </Post.CatInfoWrapper>
             <Post.CommentsWrapper>
-              <Post.Comments comments={selectedPost.comments} />
+              <Post.Comments id={selectedPost.id} />
             </Post.CommentsWrapper>
             <CommentForm id={selectedPost.id} />
           </Post.InfoWrapper>
