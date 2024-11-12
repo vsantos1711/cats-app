@@ -125,8 +125,8 @@ const CommentsWrapper = ({ children }: { children: React.ReactNode }) => {
 };
 
 const Comments = ({ comments }: { comments: IComment[] }) => {
-  return comments.map((comment, index) => (
-    <p key={index} className="my-0.5 font-semibold ">
+  return comments?.map((comment) => (
+    <p key={comment.id} className="my-0.5 font-semibold ">
       {comment.author.username}:{" "}
       <span className="font-light"> {comment.text}</span>
     </p>
