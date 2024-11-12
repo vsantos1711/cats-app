@@ -26,6 +26,6 @@ export const recoverySchema = z.object({
 export type TRecoverySchema = z.infer<typeof recoverySchema>;
 
 export const commentSchema = z.object({
-  comment: z.string().max(160),
+  comment: z.string().min(1).max(160),
 });
 export type TCommentSchema = z.infer<typeof commentSchema>;
